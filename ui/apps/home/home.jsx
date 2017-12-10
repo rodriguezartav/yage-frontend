@@ -9,10 +9,7 @@ class Container extends React.Component {
   }
 
   render(){
-
     return <div>
-
-
       <p>En esta pagina encontra información acerca de la Ceremonia de Ayahuasca del Taita Lucho en Costa Rica.</p>
       <br/>
       <div style={{padding: 7, backgroundColor: "#ddd"}}>
