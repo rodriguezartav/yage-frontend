@@ -19,18 +19,24 @@ class Container extends React.Component {
       <p><strong>Antes que nada queremos aclarar algo imporante:</strong> <br/>La situación actual no esta bien.
       Se esta haciendo un mal uso de las plantas como el Ayahuasca.</p>
 
-      <p>En algunos casos por razones comerciales, "import/export", en otras por puro desconocimiento o por
+      <p>En algunos casos por razones comerciales, en otras por puro desconocimiento o por
       creer que estos temas se aprenden en un par de meses.
       <br/>Sea por lo que sea, es normal que entre tanta confusión las personas caigan en crerse curanderos,
-      organicen "retreats" con plantas poderosas como si fuera un curso de Yoga sin tener el conocimiento real
-      para hacerlo. Tenga cuidado y no se exponga porque esto es serio y sagrado para nuestras culturas originarias.
+      organicen "retreats" con plantas poderosas como si fuera un tour en kayak sin ser parte de la cultura
+      ancestral americana, sin haber aprendido de un maestro que es miembro reconocido de esa cultura
+      , y lo han hecho durante muchisimos años.
+      <br/>
+      Muchos creen que el Ayahuasca es globalizable, tenga cuidado y no se exponga
+      porque nuestras culturas originarias siempre han visto esto con total seriedad y sacredad.
+      Quienes tiene muchos años de experiencia saben que como todo: con sabidura sale la luz y
+      con ignorancia la oscuridad.
       </p>
       </div>
       <br/>
 
-      <p>Nuestro enfoque, esta es hacia la sanción. Invitamos al Taita o Abuelo Lucho desde
+      <p>Nuestro enfoque es hacia la sanción. Invitamos al Taita o Abuelo Lucho desde
       el Putumayo de Colombia con su medicina, su canto y su ritual - conocimiento que ha sido
-      transmitido entre Shamanes desde el principio -  para adquirirlo lleva sacrificios muy grandes
+      transmitido entre Shamanes desde el principio -  y que para adquirirlo lleva sacrificios muy grandes
       por parte de los maestros que ninguno de nosotros soportaria y cuyo resultado es algo magico que
       todos experimentamos y agradecemos profundamente.</p>
       <br/>
@@ -39,11 +45,11 @@ class Container extends React.Component {
       la conexión con los demas o con la natureleza. Para enfrentar el resultado de la vida moderna: sufrimiento,
       enfermedad, ansiedad... Le llamamos apagamiento.</p>
 
-      <p>Atravez del ayahuasca y en una ceremonia seria con musica y amor; cada quien tiene una vivencia
+      <p>Atravez del ayahuasca y en una ceremonia seria con amor; cada quien tiene una vivencia
       interior unica e individual - verdadera y clara - que si es acompañada del autentico querer
       y con voluntad en el dia a dia puede usarse para transformar la vida.</p>
       <br/>
-      <p>Esta no es una ceremonia para alucinar ni para tontear. No es un juego, ni una experiencia.
+      <p>Esta no es una ceremonia para alucinar ni para payasear. No es un juego, ni una experiencia.
       Es una oportunidad para personas que tienen un autentico llamado, un verdadero querer de recuperarse y
       continuar con su crecimiento atravez del conocimiento adquirido en primera persona.</p>
 
