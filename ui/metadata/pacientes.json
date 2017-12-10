@@ -1,0 +1,45 @@
+{
+  "groupBy": "es_nuevo",
+  "principalColumn": "nombre",
+  "columns": [
+      {
+        "title": "nombre",
+        "name":"first_name"
+      },
+      {
+        "title": "email",
+        "name":"email"
+      },
+      {
+        "title": "telefono",
+        "name":"telefono"
+      },
+      {
+        "title": "es_nuevo",
+        "name":"es_nuevo",
+        "type":"boolean"
+      }
+    ],
+  "newColumns": [
+    "Detalles del Contacto",
+    "nombre",
+    "email",
+    "telefono"
+  ],
+  "editColumns": [
+    "Detalles del Contacto",
+    "nombre",
+    "email",
+    "telefono",
+    "es_nuevo"
+  ],
+  "views": [
+    {"type": "data", "name":"all","icon":"list"},
+    {"type":"data", "name":"Other","icon":"grid"}
+  ],
+  "route": "paciente",
+  "newComponent": "new",
+  "editComponnt": "edit"
+}
+
+

@@ -1,0 +1,207 @@
+{
+  "principalColumn": "__proveedor__name",
+  "groupBy": "estado",
+  "editComponent":"cpx/edit",
+  "newComponent":"cpx/new",
+  "newColumns": [
+    "Detalles del Pago",
+    "proveedor_id",
+    "referencia",
+    "plazo",
+    "tipo_cambio",
+    "fecha_facturacion",
+    "tipo_de_documento",
+    "observacion",
+    "subtotal",
+    "impuesto",
+    "descuento",
+    "total"
+  ],
+
+  "editColumns": {
+    "Pendiente": ["Detalles del Pago","fecha_pago_programado"],
+    "Calendarizado": ["Detalles del Pago","fecha_pago_programado"],
+    "Para Pagar": ["Detalles del Pago","fecha_pago_programado","forma_de_pago","tipo_cambio_pago","referencia_forma_pago","pago"],
+    "Entregado": []
+  },
+
+  "views":[
+    {"type": "data", "name":"Todo","icon":"list"},
+    {"type":"data", "name":"Locales","icon":"grid"},
+    {"type":"data", "name":"Internacionales","icon":"grid"}
+  ],
+
+  "route": "treasury/cxp",
+
+  "columns": [
+    {
+      "title": "proveedor_id",
+      "type":"datalookup",
+      "itemKey": "id",
+      "principalColumn":"nombre",
+      "route": "treasury/proveedor",
+      "view":"All",
+      "name":"Proveedor Id"
+    },
+    {
+      "title": "estado",
+      "type":"radio",
+      "options": ["Pendiente","Calendarizado","Entregado"],
+      "name": "Estado"
+    },
+    {
+      "title": "fecha_pago_programado",
+      "type":"date",
+      "name": "Fecha Programado"
+    },
+    {
+      "title": "subtotal",
+      "type":"number",
+      "name":"Sub Total"
+    },
+    {
+      "title": "impuesto",
+      "type":"number",
+      "name":"Impuesto"
+    },
+    {
+      "title": "descuento",
+      "type": "number",
+      "name":"Descuento"
+    },
+    {
+      "title": "total",
+      "type":"number",
+      "name":"Total"
+    },
+    {
+      "title": "pago",
+      "type":"number",
+      "name":"Pago"
+    },
+    {
+      "title": "observacion",
+      "type":"text",
+      "name":"Observacion"
+    },
+    {
+      "title": "tipo_de_documento",
+      "type":"radio",
+      "options": ["FA","NC"],
+      "name": "Estado"
+    },
+    {
+      "title": "forma_de_pago",
+      "type":"radio",
+      "options": ["Deposito","Cheque"],
+      "name": "Forma de Pago"
+    },
+    {
+      "title": "referencia",
+      "type":"text",
+      "name":"Referencia"
+    },
+    {
+      "title": "referencia_forma_pago",
+      "type":"text",
+      "name":"Referencia forma de pago"
+    },
+    {
+      "title": "plazo",
+      "type":"number",
+      "name":"Plazo"
+    },
+    {
+      "title": "tipo_cambio_pago",
+      "type":"number",
+      "name":"Tipo de cambio pago"
+    },
+    {
+      "title": "tipo_cambio",
+      "type":"number",
+      "name":"Tipo de Cambio"
+    },
+    {
+      "title": "fecha_facturacion",
+      "type":"date",
+      "name":"Fecha"
+    }
+
+  ],
+
+  "kanbanColumns": [
+    {
+      "name": "Pendiente",
+      "key": "Pendiente",
+      "sum": "total",
+      "details": [
+        "referencia",
+        "observacion",
+        {
+          "key": "fechavencimiento",
+          "title": "Vencimiento",
+          "format": "date"
+        },
+        {
+          "key": "saldo",
+          "title": "Saldo",
+          "format": "number"
+        }
+      ],
+      "rowActions": ["anular"]
+    },
+
+    {
+      "name": "Calendarizado",
+      "key": "Calendarizado",
+      "sum": "total",
+
+      "details": [
+        "referencia",
+        "observacion",
+        {
+          "key": "fechavencimiento",
+          "title": "Vencimiento",
+          "format": "date"
+        },
+        {
+          "key": "saldo",
+          "title": "Saldo",
+          "format": "number"
+        }
+      ]
+    },
+
+    {
+      "name": "Para Pagar",
+      "key": "Para Pagar",
+      "sum": "total",
+
+      "details": [
+        "referencia",
+        "observacion",
+        {
+          "key": "fecha_pago_programado",
+          "title": "Programado",
+          "format": "date"
+        },
+        {
+          "key": "saldo",
+          "title": "Saldo",
+          "format": "number"
+        }
+      ],
+      "rowActions": ["anular"]
+    },
+
+    {
+      "name": "Entregado",
+      "key": "Entregado",
+      "sum": "total",
+      "details": [
+        "referencia",
+        "total"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.smart-form-actions{
+  border-left: 1px solid #ddd;
+  padding-left: 10px;
+}
+
+
+.smart-form-actions .slds-button{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.slds-form-element__label{
+	text-transform: capitalize;
+}

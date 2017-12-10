@@ -1,0 +1,18 @@
+.tool-box{
+  background-color: #fff;
+  padding: 5px 13px;
+}
+
+.tool-box{
+  margin-top: 2px;
+  border-bottom: 1px solid #00a1df;
+}
+
+.view-button_selected{
+  background-color: blue;
+  color: #fff;
+}
+
+.view-button_selected:focus{
+ color: #fff;
+}
