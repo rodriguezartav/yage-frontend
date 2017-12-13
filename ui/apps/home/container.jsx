@@ -32,13 +32,13 @@ class Container extends React.Component {
   render(){
 
 
-    return <div style={{margin: "auto 10px" }}
+    return <div style={{margin: "auto" }}
     className="slds-m-around--large slds slds-small-size_2-of-2 slds-large-size_5-of-12 slds-p-bottom--x-large" >
 
       <Menu onChange={this.onChange.bind(this)} />
-
+        <div className="slds-m-horizontal_small">
         {this.renderContent()}
-
+        </div>
           </div>
   }
 }
