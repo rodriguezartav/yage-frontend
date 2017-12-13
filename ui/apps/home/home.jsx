@@ -36,10 +36,16 @@ class Container extends React.Component {
      <p> Sea por lo que sea, es normal que entre tanta confusión las personas caigan en crerse curanderos,
       organicen "retreats" con plantas poderosas como si fuera un tour en kayak sin ser parte de la cultura
       ancestral americana, sin haber aprendido de un maestro que es miembro reconocido de esa cultura
-      , y lo han hecho durante muchisimos años.</p>
+      , y continuar haciendolo con su concentimiento durante muchisimos años.</p>
 
-     <p> Muchos creen que el Ayahuasca es globalizable, tenga cuidado y no se exponga
-      porque nuestras culturas originarias siempre han visto esto con total seriedad y sacredad.
+     <p>Muchos creen que el Ayahuasca es globalizable, van a Peru/Colombia toman un par de veces,
+      encuentran un proveedor de Ayahuasca en algun lugar pobre que se las vende y se ponen un retreat en Europa,
+      Estados unidos y/o Costa Rica. Es ilega en el mundo moderno y no es rechazado por el mundo ancestral.
+      Nadie sabe que esta tomando ni que esta haciendo.</p>
+
+      <p>Es posible que el Ayahuasca aun tenga efectos positivos cuando es contrabandeda de esta forma,
+      pero tambien pasan cosas terribles. Tenga cuidado y no se exponga porque nuestras culturas originarias
+      siempre han visto esto con total seriedad y sacredad.
       Quienes tiene muchos años de experiencia saben que como todo: con sabidura sale la luz y
       con ignorancia la oscuridad.
       </p>
