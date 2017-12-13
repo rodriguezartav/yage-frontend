@@ -8,7 +8,7 @@ import Taita from "./taita";
 import Ceremonia from "./ceremonia";
 import Costos from "./reserve";
 import Codigo from "./codigo";
-
+import Style from "./style.css";
 
 class Container extends React.Component {
 
@@ -27,7 +27,6 @@ class Container extends React.Component {
     else if(this.state.view == "ceremonia") return <Ceremonia onChange={this.onChange.bind(this)} />
     else if(this.state.view == "costos") return <Costos onChange={this.onChange.bind(this)} />
     else if(this.state.view == "codigo") return <Codigo onChange={this.onChange.bind(this)} />
-
   }
 
   render(){

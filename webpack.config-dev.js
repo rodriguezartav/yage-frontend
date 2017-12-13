@@ -8,6 +8,7 @@ module.exports = {
   context: path.resolve(__dirname, 'ui'),
   entry: {
    home: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/home/index.jsx'],
+   reservaciones: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/reservaciones/index.jsx'],
    metaDataTable: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/metaDataTable/index.jsx'],
    metaDataKanban: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/metaDataKanban/index.jsx'],
   },
@@ -69,6 +70,13 @@ module.exports = {
       template: path.resolve(__dirname, 'ui','template.html'),
       filename: 'index.html',
       chunks: ['home','style'],
+      inject: 'body'
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'ui','template.html'),
+      filename: 'reservaciones.html',
+      chunks: ['reservaciones','style'],
       inject: 'body'
     }),
 

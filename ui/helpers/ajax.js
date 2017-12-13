@@ -5,12 +5,11 @@ import Promise from "bluebird";
 Ajax.getURL = function(path,params){
   if(!params) params = {};
   var url = process.env.API_URL;
-
   return url + path;
 }
 
 Ajax.logout = function(){
-  window.location = Ajax.getURL("/operations/login/logout");
+  window.location = Ajax.getURL("/login/login/logout");
 }
 
 Ajax.checkStatus = function(path){

@@ -7,7 +7,24 @@ import LoginComponent from "../components/login";
 var Auth = {}
 
 Auth.checkAuth = function(){
-  return new BpPromise.resolve({});
+  var access_key = Auth.getParameterByName("access_key");
+  var loginOperation;
+  if(access_key) loginOperation = Ajax.post("/login/login/loginWithCode",{code: access_key})
+  .then(function(contact){
+    Auth.setCookie(contact.authorization_code)
+    Ajax.authorization_code = contact.authorization_code;
+    return contact;
+  })
+  else loginOperation = Ajax.checkStatus("/login/checkstatus")
+  .then(function(result){
+    if(result == false) return Auth.login()
+    .then(function(contact){
+      document.getElementById('login').innerHTML ="";
+      return contact;
+    })
+    else return result;
+  })
+  return loginOperation
 }
 
 Auth.getAuthCookie = function(){
@@ -40,7 +57,8 @@ Auth.getParameterByName = function(name, url) {
 
 Auth.setCookie = function(authorization_code){
   var cookie = "token" + "=" + authorization_code +"; Path=/;";
-  if(location.href.indexOf("localhost")==-1) cookie += " Domain=rodcocr.com; ";
+  if(location.href.indexOf("localhost")==-1) cookie += " Domain=rodcostage.com; ";
+  console.log("set cokkir", cookie);
   document.cookie = cookie
 }
 
