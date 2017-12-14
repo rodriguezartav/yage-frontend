@@ -23,10 +23,9 @@ class Container extends React.Component {
         Sin embargo el Taita ha trabajado con mucha dedicación y mucha seriedad, en areas no tradicionales del Chaman,
         es un maestro muy sabio y universal. Escuchar su palabra es una dicha.</p>
 
-        <p> Su herramienta es la Planta Sagrada del Ayahuasca. Sus maestros el Taita Francisco y Taita Fernando,
-        urante mas de 12 años caminaron el amazonas y le transimitieron sus conocimientos. Durante el resto de practica,
-        de mas de 30 años el ha roto esquemas y planteamientos ancestrales, como por ejemplo atender a mujeres durante
-        su luna, lo cual es prohibido en el Chamanismo.</p>
+        <p> Su herramienta es la Planta Sagrada del Ayahuasca. Con sus maestros camino el amazonas atendiendo a miles durante
+        12 años, esa fue su preparacion y ahí le transimitieron sus conocimientos. Durante el resto de practica,
+        de mas de 30 años el ha roto esquemas y planteamientos ancestrales y desarrollado una practica clara y positiva.</p>
 
         <p>En sus conversaciones, leyendas y enseñanzas - y entre las endijas
         se asoma el conocimiento original del maestro Jesus, Budhha y culturas espirituales como La Hindu.
@@ -45,7 +44,7 @@ class Container extends React.Component {
 
         <p>El Taita lucho vive en su Maloka Amerikua ( Templo ) en el Putumayo de Colombia y atiende personas casi todos
         los días, así como lo ha hecho durante mucho tiempo. De primera mano, o atravez de evidencia de otras personas se
-        conoce de casos de Cancer, Sida y enfermerdades emociales serias que han logrado curarse; El no se considera
+        conoce de casos de Cancer, Sida y enfermerdades emocionales serias que han logrado curarse; El no se considera
         quien cura, y rapidamente hace la alcaracion. Es simplemente un canal, una persona que respeta profundamente
         la planta y al gran espiritu de la vida universal de todas las cosas.</p>
 

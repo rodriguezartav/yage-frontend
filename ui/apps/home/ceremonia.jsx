@@ -11,91 +11,70 @@ class Container extends React.Component {
 
 
     return <div className="slds-m-around--large" >
-    <p className="slds-text-heading_small">Como es la Ceremonia?</p>
+    <p className="slds-text-heading_small">Sobre la Ceremonia?</p>
+
+    <p>Es un ceremonia muy hermosa y tranquila. En una ambiente seguro rodeado de bosque y rios.</p>
 
     <p>Es una ceremonia tradicional amazonica, la cual se ha enseñado entre Taitas (Chamanes o Abuelos) durante mucho tiempo.
-    Es muy bonita y abierta, pero tambien es seria y se pide mucho respeto hacia el Ayahuasca, el Taita y la oportunidad.</p>
+    Es abierta, hay reglas de seguridad, pero tambien es seria y se pide mucho respeto ( sentido comun ) hacia el Ayahuasca,
+    el Taita y la oportunidad.</p>
 
     <p>Recuerde que hace no muchos años las unicas personas que conocieron del Ayahuasca eran los indigenas del Amazonas y
     las pocas personas externas que podian participar en una ceremonia eran exploradores y debian contar con el permiso
     especial de un Taita, luego de penetrar en lo profundo del Amazonas - y aun así esto era poco comun.</p>
 
-    <p>La ceremonia de Ayahuasca es muy especial y es profunda; no es un juego, una droga ni una experiencia psicodelica.
-    Con tal solo llegar y estar unos minutos esto es evidente. El enfoque del Taita, y por ende el nuestro en la organización
-    es ancestral, sagrado y autentico. El mismo de los abuelos Taitas del Amazonas, porque ellos fueron los maestros del Taita
-    Lucho y de sus maestros, y los maestros de ellos. Esto es de verdad, y usted lo podra constatar en primera persona.</p>
+    <p>En este mismo lugar se han realizado muchas ceremonias, con mas de 500 participantes en total.
+    Politicos, Artistas, Empresarios, Hombres, Mujeres y Jovenes</p>
 
-    <p className="slds-text-heading_small">La ceremonia en Costa Rica es de sanación</p>
+    <p>Seguramente alguien que participo anteriormente ya le ha contado su propia experiencia.
+    Sientase en libertad de preguntarnos cualquier duda que tenga, es normal que hayan
+    muchas y todas las contestamos con alegría. - ( hagalo con tiempo porque todos tenemos trabajos y familia que atender ).</p>
 
-    <p>Sin embargo, no estamos en el Amazonas y el Taita Lucho como maestro y abuelo ha ajustado la ceremonia a los tiempos y
-    a nuestra cultura global y moderna. No es lo mismo una ceremonia indigena profundo en el Amazonas, que una en el 2017 en
-    Costa Rica con gente que llega en carro y tiene que apagar sus celulares.</p>
+    <p>Durante la ceremonia hay personas atentas ayudandonos en todo momento, pero sobre todo esta el Taita Lucho que tiene mas de 30
+    años de experiencia y fue formado en el Amazonas por Chamanes verdades igual que el en la manera tradicional. Estara en muy buenas manos.</p>
 
-    <p>Si bien el Taita mantiene el enfoque y muchas de su practicas y oraciones Chamanicas, el enfoque de la ceremonia es
-    hacia la sanación. Incluso en ocasiones se puede sentir como si fuera una clinica. Al llegar temprano por la mañana
-    cada quien toma su espacio y pone su colchoneta donde pasara gran parte del dia/noche acostado.</p>
+    <p className="slds-text-heading_small">Que es el Ayahuasca?</p>
 
-    <p>
-    Siendo una ceremonia de sanación, con el transcurso de la ceremonia
-    cada uno de esos espacios se convierte en una cama de hospital y al final, al levantarse mucho mas sano, claro y
-    limpio de emociones y toxinas; queda claro que si fue un clinica, solo que una muy diferente a la que conocemos. Eso es
-    el Ayahuasca para nosotros, una medicina natural.</p>
+    <p>Ayahuasca, Yage, Remedio o Medicina - dice la leyenda que ojalá el Taita nos comparata que hace muchos ańos en el Amazonas,
+    bajo un ser de luz del sol con todo el conocimiento del universo, al llegar a la tierra el ser preparo el Ayahuasca frente a los nativos.
+    Cuando se tomo el brebaje, su luz se hizo muy fuerte y clara - bailo y bailo. Como el ser humano no estaba preparado para todo el conocimiento, este
+    se expandió entre todas las plantas y quedo el Ayahuasca como la llave.</p>
 
+    <p>Esa llave ha sido utilizada durante muchisimas generaciones en casi todos los pueblos indigenas del Amazonas, para curar a las
+    personas individualmente y cuando ha sido necesario reconectar a comunidades enteras. En Colombia, Peru y Brazil, es parte de su cultura; y
+    en los lugares donde todavia existe su presencia - el chaman sigue siendo una figura comun, un medico alternativo. </p>
 
-    <p className="slds-text-heading_small">Paso a Paso</p>
+    <p>El ayahuasca se ha puesto de moda, y eso hace que sea una oportunidad comercial para muchos. El Ayahuasca es un bejuco que
+    se encuentra en la montaña, hay muchas especies. Encontrarla, escogerla y cocinarla no es sencillo. Solamente un Chaman verdadero
+    puede hacer Ayahusca de Luz. Sin embargo con la gran demanda mundial han aparecido cocineros, pero como muchos no le llegan al efecto
+    lo camuflan mezclandolo con otras plantas alucinogenas peligrosas como la Reina de la Noche y la Chacruna para buscar que los consumidores
+    alucinen.
+    </p>
 
-    <p>A la hora pactada se inicia con una charla donde el Taita Lucho explica que es el Ayahuasca y que vamos a hacer.
-    Luego se realiza la apertura, una oracion, que trata de pedirle al gran espiritu universal el permiso para abrir un espacio
-    donde todos podamos trabajar. Hay saumadoras, incienso, velas y mucha paz. No es es un ambiente religioso, es altamente espiritual.</p>
+    <p>Es importante alcarar que el Ayahuasca verdadero ( sin mezclas )  no es para alucinar, no es un droga, no causa adicciones ( mas bien las resuelve ),
+    y sobre todo no hace que la persona pierda la conciencia ni el control de si mismo.</p>
 
-    <p>Luego se toma una copa de la medicina, que es un liquido cafe que tiene un sabor fuerte entre cafe y chocolate.
-    El Taita Lucho colecta el mismo las plantas, prepara la medicina durante 15 dias al fuego y lo trae desde Colombia.
-    Entre 30 y 60 minutos despues de la toma empieza el efecto.</p>
+    <p>El Ayahuasca de esta ceremonia es especialmente seleccionada, cortada, cargada, cocinada y empacada por el Taita Lucho especialmente
+    para esta ceremonia. Hoy en día hay que buscar donde hay bejucos, comprarlos al dueño de la tierra, sacarlo con mulas,
+     llevarlo hasta la Maloka del Taita, cocinarlo en un fuego que se mantiene prendido 24 horas durante 15 dias hasta llegar al punto. El Taita
+     es un señor mayor y lo ayudan sus vecinos o su hermano Jaime en algunas partes, pero el hace todo. Incluso traerlo en avion y llevarlo
+     hasta Guapiles.
+    </p>
 
+    <p className="slds-text-heading_small">El enfoque de la Ceremonia</p>
 
-    <p className="slds-text-heading_small">Que se siente?</p>
-    <p>Los efectos en resumen son purga y visionar la vida de cada quien. La purga se da cuando la medicina recorre
-    el cuerpo y colabora con la limpieza de toxinas, enfermedades y las emociones que las ocasionan.</p>
+    <p>El enfoque de la ceremonia es hacia la sanción. Cada quien tiene su razón para estar aquí, pero en general es para recuperar
+    la alegria, el amor, la conexión con los demas o con la natureleza. Para enfrentar el resultado de la vida moderna: sufrimiento,
+    enfermedad, ansiedad... y sus consecuencias manifestadas en vicios, problemas etc. Le llamamos apagamiento.</p>
 
-    <p>El Ayahuasca como planta maestra medicinal, tiene el poder de mas de 200 plantas y puede curar cualquier problema
-    de cualquier enfermedad emocional y fisica - siempre y cuando uno se lo permita.</p>
-
-    <p>La Purga es muy importante, nuestro cuerpo acumula gran cantidad de toxinas y emociones materializadas en dolencias
-    y enfermedades. Esto lo han venido diciendo los Buddhistas durante siglos, lo ha comprobado la ciencia y tambien es conocido
-    por las culturas origirias de America, el Ayahuasca es un remidio para esto justamente. La planta nos ayuda a expulsar las emociones,
-    y sus toxinas, proceso que puede ser incomodo pero nunca peor que quedarse con todo eso adentro.</p>
-
-    <p>La parte de visionar la vida, no puede ser explicada en palabras, menos por internet. No se trata de alucinar
-    loqueras incongruentes como si fuera una fiesta, ni de volar por el espacio en forma de cometa. Luego ( o durante )
-    la purga se obtiene momentaneamente la habilidad de ver la vida con mucha claridad, con la claridad de un niño dicen
-    algunos, con la claridad de nosotros mismos, cuando niños. Recordar con una claridad unica y entender nuestras acciones,
-    y sus consecuencias en nuestras cuerpos y nuestras vidas.</p>
-
-
-    <p>Llenarse de amor, ese sentimiento de paz que irradia buenas intenciones genuinas en todas las direcciones y con ese amor
-    hacia nosotros mismos, perdonar, perdonarnos y encarar para resolver nuestros problemas. Al final, la sabiduria aprendida, y las
-    soluciones a nuestros problemas son lecciones muy sencillas que solamente necesitabamos recordar.
-    La vida, como lo demuestran los grandes maestros espirituales, es lo mas sencillo que hay.</p>
-
-    <p>Muchas veces cuando se dice que la planta cura, tambien es que uno puede ver con mucha claridad lo que estaba haciendo
-    para enfermarse o para generar sufrimiento emocional y uno mismo desarrolla intuitivamente un metodo para dejar de hacerlo.
-    Entre la purga y ese cambio guiado por el interior de uno mismo, esta la cura de todos los males.</p>
-
-    <p>Durante la ceremonia hay personas atentas y ayudandonos en todo momento para la parte de la purga, asi como la parte
-    de visionar la vida y guiarnos. Infinitamente mas importante, el trabajo silencioso del Taita Lucho que se puede
-    percibir atravez de su musica y sus cantos que nos reconforan; pero que va mucho mas alla y opera en muchas
-    dimensiones que no conocemos de la vida - pero que tambien muy poquito a poco podemos experimentar en primera
-    persona y de ahí conformar nuestra propia explicación de nuestra perspectiva sobre la vida.</p>
-
-    <p>Se puede sentir mareado, vomitar, diarrea; se pueden "ver cosas con los ojos cerrados" y sentir otras; y puede sentir malestar general.
-    Todo es parte del tratamiento y de la purga y son efectos secundarios - no tanto de la planta sino de las cosas que tenemos
-    dentro.</p>
+    <p>Atravez del ayahuasca y en una ceremonia seria con amor; cada quien puede tener una vivencia interior unica e individual
+    - verdadera y clara - que si es acompañada del autentico querer y con voluntad en el dia a dia puede usarse para transformar
+    la vida.</p>
 
     <p className="slds-text-heading_small">Es algo individual</p>
 
     <p>Cada persona tiene su propia experiencia sumamente distinta al de la persona de al lado y tambien distinta
-    de otras ceremonias. El efecto de visionar de la planta, viene luego de esto y es simplemente estar con nosotros mismos tal cual
-    somos. En todo momento se mantiene plena conciencia y sentidos. Puede costar caminar, pero eso es todo. Siempre estamos presentes.</p>
+    de otras ceremonias.</p>
 
     <p>Al final, nos estamos tomando una planta sagrada que fue entregada a los indigenas amazonicos, siguiendo un ritual
     ancestral que abre su potencial, de la mano de una persona preparada en una linea de chamanes directa al origen.</p>
@@ -103,6 +82,20 @@ class Container extends React.Component {
     <p>Esto nos conecta con nuestra madre la naturaleza la cual esta en profunda conexión con todo. En la ceremonia pasara lo que estemos
     preparados para vivir y tambien lo que realmente queramos que pase - por eso de todas las cosas lo mas importante es ser valiente
     para enfrentar y descubrir la raiz de nuestros problemas y traer el verdadero querer - que es la fuerza mas poderosa del mundo.</p>
+
+    <p className="slds-text-heading_small">Consejos</p>
+
+    <p>Querer: El llamado o la razón por la que estan lleyendo esto y todo lo que hay detras de ese sentimiento,
+    es el arma mas poderosa del ser humano.
+    Una vez tomada la decisión de venir, es importante empoderar ese querer, decirlo y vivirlo. Si quiero!
+    </p>
+
+    <p>Dieta: Al reservar se les envian recomendaciones de una dieta, los resultados de la ceremonia pueden ser mucho mas efectivos
+    si se hace la dieta. No es un requisito, pero si es su primera vez, solo viene una vez o realmente quiere sanar - la dieta es
+    una sacrificio que hace la diferencia.</p>
+
+    <p>Soltar: Una vez en la ceremonia y con Ayahuasca, es momento de dejarse llevar a lo que sea que pase. De eso se trata al
+    fin y al cabo la vida espiritual y es la puerta a todo lo que nos cuesta ver - de nosotros mismos sobretodo.</p>
 
     </div>
   }
