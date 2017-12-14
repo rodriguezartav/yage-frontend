@@ -8,7 +8,7 @@ class Container extends React.Component {
 
   constructor(props) {
     super(props);
-    new Business(this);
+    this.business = new Business(this);
     this.onMontoChange = this.onMontoChange.bind(this);
     this.onDiaChange = this.onDiaChange.bind(this);
     this.onChangeText = this.onChangeText.bind(this);
@@ -29,6 +29,11 @@ class Container extends React.Component {
   }
 
   onSave(){
+    if(!UI.isNameValid()) return;
+    if(!UI.isApellidoValid()) return;
+    if(!UI.isEmailValid()) return;
+    if(!UI.isPersonasValid()) return;
+    if(!UI.isDiasValid()) return;
     this.business.onSave();
   }
 
@@ -103,12 +108,6 @@ class Container extends React.Component {
     <label className="slds-form-element__label">Email</label>
     <div className="slds-form-element__control">
     <input data-name="email" onChange={this.onChangeText} ref="email" type="text" className="slds-input" placeholder="Email (requerido)" />
-    </div>
-  </div>
-  <div className="slds-form-element">
-    <label className="slds-form-element__label" >Celular (lo usamos para asignar depositos SINPE)</label>
-    <div className="slds-form-element__control">
-    <input data-name="celular"  onChange={this.onChangeText} ref="celular" type="number" className="slds-input" placeholder="# Pasaporte si no tiene celular" />
     </div>
   </div>
 

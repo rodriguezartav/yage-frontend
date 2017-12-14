@@ -81,7 +81,8 @@ Ajax.post = function(path, body, params){
   })
   .then(function(response){
     if( status < 300 ){ return Promise.resolve( response ) }
-    else return Promise.reject( new Error(response,status) )  })
+    else return Promise.reject( response )
+  })
 }
 
 Ajax.put = function(path, body, params){
