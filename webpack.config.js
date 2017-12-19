@@ -57,7 +57,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        API_URL: process.env.NODE_ENV == "staging" ? JSON.stringify("http://apistaging.ceremoniacusingas.org") : JSON.stringify("https://api.ceremoniacusingas.org")
+        API_URL: process.env.NODE_ENV == "staging" ? JSON.stringify("https://apistaging.ceremoniacusingas.org") : JSON.stringify("https://api.ceremoniacusingas.org")
       }
     }),
     new CleanWebpackPlugin(["dist/*.js","dist/*.css","dist/*.html","dist/*.map","dist/*.gz"], {verbose: true}),
