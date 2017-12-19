@@ -12,6 +12,8 @@ module.exports = {
     home: './apps/home/index.jsx',
     metaDataTable: './apps/metaDataTable/index.jsx',
     metaDataKanban: './apps/metaDataKanban/index.jsx',
+    reservaciones: './apps/reservaciones/index.jsx',
+
   },
   output: {
     filename: '[name].[hash].js',
@@ -88,6 +90,12 @@ module.exports = {
       template: path.resolve(__dirname, 'ui','template.html'),
       filename: 'metaDataKanban.html',
       chunks: ['metaDataKanban','style'],
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'ui','template.html'),
+      filename: 'reservaciones.html',
+      chunks: ['reservaciones','style'],
       inject: 'body'
     }),
 
