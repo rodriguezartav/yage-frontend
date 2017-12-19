@@ -5,6 +5,7 @@ function Business(app){
   var _this = this;
   this.app = app;
   this.app.state={
+    periodo: "2018-1",
     view: "home",
     personas: 0,
     dias: [],

@@ -16,6 +16,7 @@ Ajax.checkStatus = function(path){
   var status;
   return fetch(Ajax.getURL(path),{
     headers: new Headers({
+      'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
       'Authorization': Ajax.authorization_code
     }),
@@ -32,6 +33,7 @@ Ajax.get = function(path, params){
   var status;
   return fetch(Ajax.getURL(path,params),{
     headers: new Headers({
+      'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
       'Authorization': Ajax.authorization_code
     }),
@@ -60,6 +62,7 @@ Ajax.post = function(path, body, params){
   var status;
   return fetch(Ajax.getURL(path,params),{
     headers: new Headers({
+      'x-namespace':process.env.NODE_ENV,
       'Content-Type': 'application/json',
       'Authorization': Ajax.authorization_code
     }),
@@ -89,6 +92,7 @@ Ajax.put = function(path, body, params){
   var status;
   return fetch(Ajax.getURL(path,params),{
     headers: new Headers({
+      'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
       'Authorization': Ajax.authorization_code
     }),
@@ -118,6 +122,7 @@ Ajax.delete = function(path,params){
   var status;
   return fetch(Ajax.getURL(path,params),{
     headers: new Headers({
+      'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
       'Authorization': Ajax.authorization_code
     }),

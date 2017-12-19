@@ -29,6 +29,7 @@ module.exports = function(Business){
         "telefono":state.celular,
       },
       "reservacion":{
+        "periodo": state.periodo,
         "jueves": state.dias.indexOf("jueves") > -1 ? state.personas : 0,
         "sabado": state.dias.indexOf("sabado") > -1 ? state.personas : 0,
         "domingo": state.dias.indexOf("domingo") > -1 ? state.personas : 0,
@@ -37,7 +38,7 @@ module.exports = function(Business){
         "total_personas": state.personas
       }
     }
-    Ajax.post("/public/paciente/book",body)
+    Ajax.post("/public/reservacion/book",body)
     .then( function(response){
       _this.app.setState({view: "complete",saving: false});
     })

@@ -86,7 +86,7 @@ class Container extends React.Component {
     return <div>
     {this.renderError()}
 
-    <div className="slds-text-heading--large ">Ceremonia de Sanación del Taita Lucho</div>
+    <div className="slds-text-heading--large ">Ceremonia de Sanación del Taita Lucho {this.state.periodo}</div>
 
 
     <div className="slds-form--stacked slds-m-top--large" >
