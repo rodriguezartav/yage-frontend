@@ -11,93 +11,42 @@ class Container extends React.Component {
 
 
     return <div className="slds-m-around--large" >
-    <p className="slds-text-heading_small">Sobre la Ceremonia?</p>
+    <p className="slds-text-heading_small">Sobre la Ceremonia</p>
 
-    <p>Es un ceremonia muy hermosa y tranquila. En una ambiente seguro rodeado de bosque y rios.</p>
+    <p>Es una ceremonia de sanación tradicional amazónica, la cual se ha enseñado entre Taitas (Chamanes o Abuelos) durante mucho tiempo. Es abierta, hay reglas de seguridad, pero también es seria y se pide mucho respeto (sentido común) hacia el Ayahuasca, el Taita y la oportunidad.</p>
 
-    <p>Es una ceremonia tradicional amazonica, la cual se ha enseñado entre Taitas (Chamanes o Abuelos) durante mucho tiempo.
-    Es abierta, hay reglas de seguridad, pero tambien es seria y se pide mucho respeto ( sentido comun ) hacia el Ayahuasca,
-    el Taita y la oportunidad.</p>
+    <p>Recuerde que hace no muchos años las únicas personas que conocieron del Ayahuasca eran los indígenas del Amazonas y las pocas personas externas que podían participar en una ceremonia eran exploradores y debían contar con el permiso especial de un Taita, luego de penetrar en lo profundo del Amazonas - y aun así esto era poco común.</p>
 
-    <p>Recuerde que hace no muchos años las unicas personas que conocieron del Ayahuasca eran los indigenas del Amazonas y
-    las pocas personas externas que podian participar en una ceremonia eran exploradores y debian contar con el permiso
-    especial de un Taita, luego de penetrar en lo profundo del Amazonas - y aun así esto era poco comun.</p>
+    <p>Las ceremonias se realizan en una ambiente seguro rodeado de animales que nos acompañan, bosques y ríos.</p>
 
-    <p>En este mismo lugar se han realizado muchas ceremonias, con mas de 500 participantes en total.
-    Politicos, Artistas, Empresarios, Hombres, Mujeres y Jovenes</p>
+    <p>A lo largo de los años en este mismo lugar se han realizado muchas ceremonias con más de 500 participantes en total. Hemos participado personas con todo tipo de creencias,  de diferentes estratos sociales, edades y experiencias. El denominador común de todos nosotros es el deseo de sanar y de crecer espiritualmente en armonía con el mundo que nos rodea.</p>
 
-    <p>Seguramente alguien que participo anteriormente ya le ha contado su propia experiencia.
-    Sientase en libertad de preguntarnos cualquier duda que tenga, es normal que hayan
-    muchas y todas las contestamos con alegría. - ( hagalo con tiempo porque todos tenemos trabajos y familia que atender ).</p>
+    <p>Seguramente alguien que participó anteriormente ya le ha contado su propia experiencia, pero recuerde que cada experiencia es única e irrepetible. Siéntase en libertad de preguntarnos cualquier duda que tenga, es normal que haya muchas y todas las contestamos con alegría.</p>
 
-    <p>Durante la ceremonia hay personas atentas ayudandonos en todo momento, pero sobre todo esta el Taita Lucho que tiene mas de 30
-    años de experiencia y fue formado en el Amazonas por Chamanes verdades igual que el en la manera tradicional. Estara en muy buenas manos.</p>
+    <p>Durante la ceremonia hay personas atentas ayudándonos en todo momento, pero sobre todo está el Taita Lucho que tiene más de 30 años de experiencia y fue formado en el Amazonas por Chamanes verdaderos igual que él, en la manera tradicional. Además de su esposa y compañera de vida, Mercedes, que con su amor y sabiduría nos ayuda y acompaña. Estará en muy buenas manos.</p>
 
-    <p className="slds-text-heading_small">Que es el Ayahuasca?</p>
-
-    <p>Ayahuasca, Yage, Remedio o Medicina - dice la leyenda que ojalá el Taita nos comparata que hace muchos ańos en el Amazonas,
-    bajo un ser de luz del sol con todo el conocimiento del universo, al llegar a la tierra el ser preparo el Ayahuasca frente a los nativos.
-    Cuando se tomo el brebaje, su luz se hizo muy fuerte y clara - bailo y bailo. Como el ser humano no estaba preparado para todo el conocimiento, este
-    se expandió entre todas las plantas y quedo el Ayahuasca como la llave.</p>
-
-    <p>Esa llave ha sido utilizada durante muchisimas generaciones en casi todos los pueblos indigenas del Amazonas, para curar a las
-    personas individualmente y cuando ha sido necesario reconectar a comunidades enteras. En Colombia, Peru y Brazil, es parte de su cultura; y
-    en los lugares donde todavia existe su presencia - el chaman sigue siendo una figura comun, un medico alternativo. </p>
-
-    <p>El ayahuasca se ha puesto de moda, y eso hace que sea una oportunidad comercial para muchos. El Ayahuasca es un bejuco que
-    se encuentra en la montaña, hay muchas especies. Encontrarla, escogerla y cocinarla no es sencillo. Solamente un Chaman verdadero
-    puede hacer Ayahusca de Luz. Sin embargo con la gran demanda mundial han aparecido cocineros, pero como muchos no le llegan al efecto
-    lo camuflan mezclandolo con otras plantas alucinogenas peligrosas como la Reina de la Noche y la Chacruna para buscar que los consumidores
-    alucinen.
-    </p>
-
-    <p>Es importante alcarar que el Ayahuasca verdadero ( sin mezclas )  no es para alucinar, no es un droga, no causa adicciones ( mas bien las resuelve ),
-    y sobre todo no hace que la persona pierda la conciencia ni el control de si mismo.</p>
-
-    <p>El Ayahuasca de esta ceremonia es especialmente seleccionada, cortada, cargada, cocinada y empacada por el Taita Lucho especialmente
-    para esta ceremonia. Hoy en día hay que buscar donde hay bejucos, comprarlos al dueño de la tierra, sacarlo con mulas,
-     llevarlo hasta la Maloka del Taita, cocinarlo en un fuego que se mantiene prendido 24 horas durante 15 dias hasta llegar al punto. El Taita
-     es un señor mayor y lo ayudan sus vecinos o su hermano Jaime en algunas partes, pero el hace todo. Incluso traerlo en avion y llevarlo
-     hasta Guapiles.
-    </p>
-
+    <p className="slds-text-heading_small">¿Qué es el Ayahuasca?</p>
+    <p>Ayahuasca, Yagé, Remedio o Medicina: dice la leyenda -que ojalá el Taita nos comparta- que hace muchos años en el Amazonas, bajó un ser de luz desde el sol con todo el conocimiento del universo y, al llegar a la tierra, preparó el Ayahuasca frente a los nativos. Cuando se tomó el brebaje, su luz se hizo muy fuerte y clara - bailó y bailó y les hizo entrega de su sabiduría. Sin embargo, como el ser humano no estaba preparado para recibir todo el conocimiento que se le estaba entregando, éste se expandió entre todas las plantas sagradas y el Ayahuasca quedó como la llave para llegar a él.</p>
+    <p>Esa llave ha sido utilizada durante muchísimas generaciones en casi todos los pueblos indígenas del Amazonas, para curar a las personas individualmente y cuando ha sido necesario reconectar a comunidades enteras. En Colombia, Perú y Brasil, es parte de su cultura. En los lugares donde todavía existe su presencia, el chamán sigue siendo una figura predominante, un médico alternativo.</p>
+    <p>En los últimos años el ayahuasca se ha puesto de moda, y eso hace que sea una oportunidad comercial para muchos. El Ayahuasca es un bejuco que se encuentra en la montaña, hay muchas especies. Encontrarla, escogerla y cocinarla no es sencillo. Solamente un Chamán verdadero puede hacer alquimia verdadera para preparar Ayahuasca de Luz. Sin embargo, con la altísima demanda mundial de la medicina, han aparecido cientos de “cocineros” que se dicen chamanes, sin la experiencia, el respeto ni los conocimientos necesarios y que, como no logran crear la medicina, recurren a métodos peligrosos mezclándolo con otras plantas alucinógenas como la Reina de la Noche, para conseguir que los consumidores alucinen.</p>
+    <p>Es importante aclarar que el Ayahuasca verdadero (sin mezclas) no es para alucinar sino visionar. No es un droga, no causa adicciones (más bien se utiliza para eliminarlas), y sobre todo no hace que la persona pierda la conciencia ni el control de sí misma.</p>
+    <p>El Ayahuasca que vamos a consumir en estas ceremonias fue especialmente seleccionada, cocinada y empacada por el Taita Lucho. Hoy en día hay que buscar los bejucos, comprarlos al dueño de la tierra, sacarlo con mulas, llevarlo hasta la Maloka del Taita y cocinarlo en un fuego que se mantiene prendido 24 horas durante 15 días hasta llegar al punto. Durante todo este tiempo se realizan oraciones y cantos que forman parte de su magia.</p>
     <p className="slds-text-heading_small">El enfoque de la Ceremonia</p>
 
-    <p>El enfoque de la ceremonia es hacia la sanción. Cada quien tiene su razón para estar aquí, pero en general es para recuperar
-    la alegria, el amor, la conexión con los demas o con la natureleza. Para enfrentar el resultado de la vida moderna: sufrimiento,
-    enfermedad, ansiedad... y sus consecuencias manifestadas en vicios, problemas etc. Le llamamos apagamiento.</p>
-
-    <p>Atravez del ayahuasca y en una ceremonia seria con amor; cada quien puede tener una vivencia interior unica e individual
-    - verdadera y clara - que si es acompañada del autentico querer y con voluntad en el dia a dia puede usarse para transformar
-    la vida.</p>
-
+    <p>El enfoque de la ceremonia es hacia la sanción. Cada quien tiene su razón para estar aquí, pero en general es para recuperar la alegría, el amor, la conexión con los demás o con la naturaleza. Para enfrentar el resultado de la vida moderna: sufrimiento, enfermedad, ansiedad... y sus consecuencias manifestadas en vicios, problemas etc. Le llamamos apagamiento.</p>
+    <p>A través del ayahuasca y en una ceremonia seria con amor, cada quien puede tener una vivencia interior única e individual - verdadera y clara - que si es acompañada del auténtico querer y con voluntad en el día a día, puede usarse para transformar la vida.</p>
     <p className="slds-text-heading_small">Es algo individual</p>
-
-    <p>Cada persona tiene su propia experiencia sumamente distinta al de la persona de al lado y tambien distinta
-    de otras ceremonias.</p>
-
-    <p>Al final, nos estamos tomando una planta sagrada que fue entregada a los indigenas amazonicos, siguiendo un ritual
-    ancestral que abre su potencial, de la mano de una persona preparada en una linea de chamanes directa al origen.</p>
-
-    <p>Esto nos conecta con nuestra madre la naturaleza la cual esta en profunda conexión con todo. En la ceremonia pasara lo que estemos
-    preparados para vivir y tambien lo que realmente queramos que pase - por eso de todas las cosas lo mas importante es ser valiente
-    para enfrentar y descubrir la raiz de nuestros problemas y traer el verdadero querer - que es la fuerza mas poderosa del mundo.</p>
-
+    <p>Cada persona tiene su propia experiencia sumamente distinta al de la persona de al lado y también distinta de otras ceremonias.</p>
+    <p>Al final, nos estamos tomando una planta sagrada que fue entregada a los indígenas amazónicos, siguiendo un ritual ancestral que abre su potencial, de la mano de una persona preparada en una línea de chamanes directa al origen.</p>
+    <p>Esto nos conecta con nuestra madre la naturaleza la cual está en profunda conexión con todo. En la ceremonia pasará lo que estemos preparados para vivir y también lo que realmente queramos que pase - por eso de todas las cosas lo más importante es ser valiente para enfrentar y descubrir la raíz de nuestros problemas y traer el verdadero querer - que es la fuerza más poderosa del mundo.</p>
     <p className="slds-text-heading_small">Consejos</p>
+    <p>Querer: El llamado o la razón por la que están leyendo esto y todo lo que hay detrás de ese sentimiento, es el arma más poderosa del ser humano. Una vez tomada la decisión de venir, es importante empoderar ese querer, decirlo y vivirlo. Si quiero!</p>
+    <p>Dieta: Al reservar se les envían recomendaciones de una dieta, los resultados de la ceremonia pueden ser mucho más efectivos si se hace la dieta. No es un requisito, pero si es su primera vez, solo viene una vez o realmente quiere sanar - la dieta es una sacrificio que hace la diferencia.</p>
+    <p>Soltar: Una vez en la ceremonia y con Ayahuasca, es momento de dejarse llevar a lo que sea que pase. De eso se trata al fin y al cabo la vida espiritual y es la puerta a todo lo que nos cuesta ver - de nosotros mismos sobretodo.</p>
 
-    <p>Querer: El llamado o la razón por la que estan lleyendo esto y todo lo que hay detras de ese sentimiento,
-    es el arma mas poderosa del ser humano.
-    Una vez tomada la decisión de venir, es importante empoderar ese querer, decirlo y vivirlo. Si quiero!
-    </p>
 
-    <p>Dieta: Al reservar se les envian recomendaciones de una dieta, los resultados de la ceremonia pueden ser mucho mas efectivos
-    si se hace la dieta. No es un requisito, pero si es su primera vez, solo viene una vez o realmente quiere sanar - la dieta es
-    una sacrificio que hace la diferencia.</p>
+</div>
 
-    <p>Soltar: Una vez en la ceremonia y con Ayahuasca, es momento de dejarse llevar a lo que sea que pase. De eso se trata al
-    fin y al cabo la vida espiritual y es la puerta a todo lo que nos cuesta ver - de nosotros mismos sobretodo.</p>
-
-    </div>
   }
 }
 
