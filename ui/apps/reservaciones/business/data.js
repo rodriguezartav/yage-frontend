@@ -3,6 +3,7 @@ var UI = require("../ui");
 
 module.exports = function(Business){
 
+
   Business.prototype.getAll = function(email,password){
     var _this = this;
     Ajax.get("/public/reservacion/getStat?periodo="+this.app.state.periodo)
