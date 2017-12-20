@@ -41,7 +41,7 @@ class Container extends React.Component {
       <ul>
       <li>Carolina: carolinadada@hotmail.com</li>
       <li>Roberto: roberto@3vot.com</li>
-      <li>Jane: janeseglau@hotmail.com</li>
+      <li>Jane: segleau@yahoo.com</li>
       </ul>
 
       <a className="slds-button slds-button_brand slds-m-top--medium">Reservar</a>
