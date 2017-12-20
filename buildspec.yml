@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - webpack -p --progress
-      - aws s3 sync ./dist s3://$S3_PREFIX.ceremoniacusingas.org --acl public-read
+      - aws s3 sync ./dist s3://$S3_PREFIXceremoniacusingas.org --acl public-read
 artifacts:
   type: zip
   files:
