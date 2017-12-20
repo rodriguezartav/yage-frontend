@@ -107,7 +107,7 @@ module.exports = {
       minRatio: 0.8
     }),
    new CopyWebpackPlugin([
-               { from: 'assets',to: "assets" }
-           ])
+         { from: 'assets',to: "assets" }
+     ])
   ],
 };
