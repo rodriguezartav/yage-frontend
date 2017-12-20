@@ -18,7 +18,7 @@ Ajax.checkStatus = function(path){
     headers: new Headers({
       'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
-      'Authorization': Ajax.authorization_code
+      'authorization': Ajax.authorization_code
     }),
     mode: "cors",
     method: "GET",
@@ -35,7 +35,7 @@ Ajax.get = function(path, params){
     headers: new Headers({
       'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
-      'Authorization': Ajax.authorization_code
+      'authorization': Ajax.authorization_code
     }),
     mode: "cors",
     method: "GET",
@@ -64,7 +64,7 @@ Ajax.post = function(path, body, params){
     headers: new Headers({
       'x-namespace':process.env.NODE_ENV,
       'Content-Type': 'application/json',
-      'Authorization': Ajax.authorization_code
+      'authorization': Ajax.authorization_code
     }),
     body: JSON.stringify(body),
     mode: "cors",
@@ -94,7 +94,7 @@ Ajax.put = function(path, body, params){
     headers: new Headers({
       'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
-      'Authorization': Ajax.authorization_code
+      'authorization': Ajax.authorization_code
     }),
     body: JSON.stringify(body),
     mode: "cors",
@@ -124,7 +124,7 @@ Ajax.delete = function(path,params){
     headers: new Headers({
       'x-namespace': process.env.NODE_ENV,
       'Content-Type': 'application/json',
-      'Authorization': Ajax.authorization_code
+      'authorization': Ajax.authorization_code
     }),
     mode: "cors",
     method: "DELETE",
