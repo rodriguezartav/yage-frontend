@@ -1,0 +1,19 @@
+body{
+  background-color: #fff;
+}
+
+p{
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.5rem;
+}
+
+.slds-col>a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.slds-col>a:hover {
+  color: #ddd;
+  text-decoration: none;
+}

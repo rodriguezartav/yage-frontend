@@ -32,13 +32,23 @@ class Container extends React.Component {
   render(){
 
 
-    return <div style={{margin: "auto" }}
-    className="slds-m-around--large slds slds-small-size_2-of-2 slds-large-size_5-of-12 slds-p-bottom--x-large" >
+    return <div>
+    <Menu onChange={this.onChange.bind(this)} />
+    <div style={{margin: "auto" }}
+    className="slds-m-around--large slds slds-small-size_2-of-2 slds-large-size_6-of-12 slds-p-bottom--x-large" >
 
-      <Menu onChange={this.onChange.bind(this)} />
-        <div className="slds-m-horizontal_small">
+
+        <div className="slds-m-horizontal_small slds-m-bottom_xx-large">
         {this.renderContent()}
         </div>
+          </div>
+
+
+          <div style={{borderTop: "1px solid #440e62"}} className="slds-docked-form-footer">
+
+          <a href="/reservaciones.html" className="slds-button slds-button_brand slds-m-top_xx_small">Reservar</a>
+          </div>
+
           </div>
   }
 }
