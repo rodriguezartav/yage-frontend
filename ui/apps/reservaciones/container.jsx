@@ -43,7 +43,6 @@ class Container extends React.Component {
       <button style={{backgroundColor: "#fef200, color: #333"}} onClick={this.onSave} type="button" className="slds-button slds-button--brand">
         Reservar
       </button>
-      <a style={{right: 10, position: "absolute"}} type="button" href="/admin.html" className="slds-float--right slds-button slds-button--neutral">Reservaciones</a>
     </div>
   }
 
