@@ -190,7 +190,7 @@ class Container extends React.Component {
 
     return <div>
     <Menu />
-    <div  className="slds-m-around--x-large slds-size--5-of-12 slds-p-bottom--x-large">
+    <div style={{marginLeft: "auto", marginRight: "auto"}} className="slds-m-vertical--x-large slds-size--5-of-12 slds-p-bottom--x-large">
 
 
     {body}
