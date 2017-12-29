@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 import { AppContainer } from 'react-hot-loader';
+import Metadata from '../../metadata';
 
 
 const render = (Component) => {
+  var App = Metadata(getParameterByName("app"));
+
   ReactDOM.render(
     <AppContainer>
-      <Component appName={getParameterByName("app")} />
+      <Component {...App} />
     </AppContainer>
 
    , document.getElementById('root')

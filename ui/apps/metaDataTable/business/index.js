@@ -3,20 +3,36 @@ import Auth from "../../../helpers/auth";
 import Data from "./data";
 import createHistory from 'history/createHashHistory';
 import Contents from "./contents";
+import Columns from "./columns";
+import Sort from "./sort";
+import Filter from "./filter";
 
 const history = createHistory();
 
 function Business(app){
   var _this = this;
-
+  Columns.init( app.props );
   this.app = app;
   Auth.getAuthCookie();
 
   this.app.state={
-    contents: Contents.all(),
+    contents: [],
+    computedRows: [],
+    groupBy: app.props.groupBy,
     content: null,
     dataView: app.props.views[0].name,
-    errors: []
+    listColumns: Columns.getColumnsArrayFromList("listColumns"),
+    editColumns: [],
+    errors: [],
+    sortBy: app.props.groupBy,
+    sortDirection: 1,
+    filter: null,
+    columnWidthData: {
+      totalWidth: 0,
+      columnWidths: []
+    },
+    actions: []
+
   };
   Business.business = Business.instance = this;
   Business.instance.history = history;
@@ -26,6 +42,45 @@ function Business(app){
     if(success) return _this.init();
     else return false;
   })
+}
+
+Business.prototype.sort = function(sortBy){
+  var state = this.app.state;
+  var direction = state.sortDirection || 1;
+  if( state.sortBy == sortBy ) direction *= -1;
+  this.computeRows( "SKIP" , sortBy, direction );
+}
+
+Business.prototype.filter = function(column, text){
+  var state = this.app.state;
+  var filter;
+  if( !text) filter = null;
+  else filter= { column: column, text: text };
+  this.computeRows( filter, state.sortBy, state.sortDirection );
+}
+
+Business.prototype.reComputeRows = function(){
+  this.computeRows(this.app.state.filter);
+}
+
+Business.prototype.computeRows = function(filter, sortBy, sortDirection){
+  if(!sortBy) sortBy = this.app.state.sortBy;
+  if(!sortDirection) sortDirection = this.app.state.sortDirection;
+
+  var rows = this.app.state.contents;
+  var newState = { sortBy: sortBy, sortDirection: sortDirection};
+  if( rows.length == 0 && filter) rows = [ { isPlaceHolder: true } ];  //To render columns
+  newState.columnWidthData = Columns.getColumnWidths( rows, this.app.state.listColumns );
+  if( rows.length == 1 && rows[0].isPlaceHolder ) rows = [];
+
+  var filteredRows = rows;
+  if( filter != "SKIP" ){
+    filteredRows = Filter(rows, filter);
+    newState.filter = filter;
+  }
+
+  newState.computedRows = Sort(filteredRows, Columns.getColumnByName( sortBy ), sortDirection );
+  this.app.setState(newState);
 }
 
 Business.prototype.init = function(){
