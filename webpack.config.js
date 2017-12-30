@@ -70,6 +70,7 @@ module.exports = {
       }),
 
 
+
     new HtmlWebpackPlugin({
       template: './template.html',
       filename: 'index.html',
