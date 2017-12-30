@@ -37,14 +37,14 @@ class App extends React.Component {
  }
 
  loadEditComponents(){
-   var _this = this;
-   if(!_this.props.editComponents) return;
-   var actions = [];
-   _this.props.editComponents.forEach(function(editComponentConfiguration){
-     actions.push(editComponentConfiguration)
-     setTimeout( function(){ _this.loadEditComponent(editComponentConfiguration) }, 5000 );
-   })
-   this.setState({actions: actions});
+   //var _this = this;
+   //if(!_this.props.editComponents) return;
+   //var actions = [];
+   //_this.props.editComponents.forEach(function(editComponentConfiguration){
+    // actions.push(editComponentConfiguration)
+    // setTimeout( function(){ _this.loadEditComponent(editComponentConfiguration) }, 5000 );
+   //})
+   //this.setState({actions: actions});
  }
 
  loadEditComponent(editComponentConfiguration){
