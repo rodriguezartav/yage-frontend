@@ -33,7 +33,7 @@ Business.prototype.registerWithSalesforce = function(){
 
 Business.prototype.register = function(contact){
   var _this = this;
-  Ajax.post("/operations/login/register", {contact:contact, returnTo: this.app.state.redirect_uri})
+  Ajax.post("/login/login/register", {contact:contact, returnTo: this.app.state.redirect_uri})
   .then( function(contact){
     console.log(contact)
     Auth.setCookie(contact.authorization_code);
@@ -49,17 +49,17 @@ Business.prototype.register = function(contact){
 
 Business.prototype.loginWithEmail = function(email){
   var _this = this;
-  return Ajax.post("/operations/login/loginWithEmail", { email: email })
+  return Ajax.post("/login/login/loginWithEmail", { email: email })
 }
 
 Business.prototype.loginWithPhone = function(phone){
   var _this = this;
-  return Ajax.post("/operations/login/loginWithPhone", {phone: phone})
+  return Ajax.post("/login/login/loginWithPhone", {phone: phone})
 }
 
 Business.prototype.loginWithCode = function(code){
   var _this = this;
-  return Ajax.post("/operations/login/loginWithCode",{code: code})
+  return Ajax.post("/login/login/validateCode",{code: code})
   .then( function(contact){
     Auth.setCookie(contact.authorization_code)
     Ajax.authorization_code = contact.authorization_code;
