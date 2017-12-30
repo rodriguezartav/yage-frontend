@@ -57,7 +57,7 @@ Auth.getParameterByName = function(name, url) {
 
 Auth.setCookie = function(authorization_code){
   var cookie = "token" + "=" + authorization_code +"; Path=/;";
-  if(location.href.indexOf("localhost")==-1) cookie += " Domain=rodcostage.com; ";
+  if(location.href.indexOf("localhost")==-1) cookie += " Domain=ceremoniacusingas.org; ";
   console.log("set cokkir", cookie);
   document.cookie = cookie
 }
