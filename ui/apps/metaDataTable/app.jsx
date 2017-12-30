@@ -48,15 +48,7 @@ class App extends React.Component {
  }
 
  loadEditComponent(editComponentConfiguration){
-   var _this = this;
-   import(/* webpackChunkName: "editView" */ '../../custom/' + editComponentConfiguration.path )
-   .then(Edit => {
-     var state = _this.state;
-     state["editComponent_" + editComponentConfiguration.icon] = Edit.default;
-     _this.setState(state);
-   })
-   .catch(error => 'An error occurred while loading the component');
- }
+  }
 
  storeScrollY(scrollY){
   this.setState({scrollY: scrollY})

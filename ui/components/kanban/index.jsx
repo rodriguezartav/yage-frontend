@@ -89,13 +89,7 @@ class Kanban extends React.Component {
 
 
   onShowAddOn(addon, id){
-    console.log("Loaded",arguments)
-    var _this = this;
-    import(/* webpackChunkName: "addon" */ '../../addons/' + addon ).then(Addon => {
-      console.log("Loaded")
 
-        _this.setState({ addon: Addon.default, addonId: id });
-      }).catch(error => 'An error occurred while loading the component');
   }
 
   closeAddOn(){
