@@ -1,5 +1,5 @@
 {
-  "groupBy": "total_personas",
+  "groupBy": "estado",
   "principalColumn": "__paciente__nombre",
   "columns": {
     "paciente_id":{
@@ -20,6 +20,12 @@
       "type":"relation",
       "titleField": "__paciente__email",
       "editable":false
+    },
+    "estado":{
+      "title":"Estado",
+      "type":"select",
+      "options":["nuevo","pagado","becado"],
+      "order":["nuevo","pagado","becado"]
     },
       "total_personas":
       {
@@ -64,7 +70,7 @@
     "saldo"
   ],
   "listColumns":[
-    "paciente_id","email","total_personas","jueves","sabado","domingo","monto","saldo"
+    "paciente_id","estado","email","total_personas","jueves","sabado","domingo","monto","saldo"
   ],
   "views": [
     {"type": "data", "name":"allFromPeriod?periodo=2018-1","icon":"list"}
