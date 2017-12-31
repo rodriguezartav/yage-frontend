@@ -29,7 +29,7 @@
     },
       "total_personas":
       {
-        "title": "Pax en Reservaciones",
+        "title": "Pax Total",
         "sumOnSort":"monto"
       },
       "monto":{
@@ -49,14 +49,17 @@
       }
     },
   "newColumns": [
-    "Detalles del Contacto",
+    "Detalles del Paciente",
     "paciente_id",
-    "email",
     "telefono",
-    "Sobre la reservación",
+    "Sobre la Reservación",
+    "jueves",
+    "sabado",
+    "domingo",
+    "Resumen y Costos",
+    "total_personas",
     "monto",
-    "saldo",
-    "total_personas"
+    "saldo"
   ],
   "editColumns": [
     "Detalles del Contacto",
@@ -65,12 +68,13 @@
     "jueves",
     "sabado",
     "domingo",
+    "Resumen y Costos",
     "total_personas",
     "monto",
     "saldo"
   ],
   "listColumns":[
-    "paciente_id","estado","email","total_personas","jueves","sabado","domingo","monto","saldo"
+    "paciente_id","estado","jueves","sabado","domingo","total_personas","monto","saldo"
   ],
   "views": [
     {"type": "data", "name":"allFromPeriod?periodo=2018-1","icon":"list"}
