@@ -2,7 +2,7 @@ import React from 'react';
 import UI from "./ui";
 import LookUpItem from "./lookUpItem"
 import Data from "./data";
-
+import AutoForm from "../autoForm";
 
 class DataLookup extends React.Component {
 
@@ -18,7 +18,7 @@ class DataLookup extends React.Component {
   }
 
   componentWillMount(){
-    Data(this);
+    Data.load(this);
   }
 
   componentDidMount(){
@@ -33,6 +33,23 @@ class DataLookup extends React.Component {
     var selectedItem;
     this.state.items.forEach(function(item){ if(item[_this.props.itemKey] == nextProps.selectedItem) selectedItem = item })
     this.setState({ selectedItem: selectedItem });
+  }
+
+  onNew(){
+    var _this = this;
+    Data.onNew(this)
+    .then(function(results){
+      _this.setState({showModal: true, modalColumns: results});
+    })
+  }
+
+  onNewSave(){
+    var model = this.refs.autoForm.state.model;
+    Data.onSave(this, model);
+  }
+
+  onHideModal(){
+    this.setState({showModal: false,modalColumns: [] });
   }
 
   onClose(){
@@ -57,6 +74,50 @@ class DataLookup extends React.Component {
     this.setState({filteredItems: items, isOpen: true, selectedItem: null, searchText: text });
   }
 
+
+
+    renderModal(){
+      if(!this.state.showModal) return null;
+      var height = this.props.viewHeight * 0.75;
+      var columnViews = this.state.modalColumns.map(function(column){ return column.name; })
+
+
+      return <div  style={{height: height}}>
+      <section role="dialog" tabIndex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" className="slds-modal slds-fade-in-open">
+      <div className="slds-modal__container">
+      <header className="slds-modal__header">
+      <button onClick={this.onHideModal.bind(this)} className="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+      <svg className="slds-button__icon slds-button__icon_large" aria-hidden="true">
+      <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+      </svg>
+      <span className="slds-assistive-text">Close</span>
+      </button>
+      <h2 id="modal-heading-01" className="slds-text-heading_medium slds-hyphenate">Crear</h2>
+      </header>
+      <div className="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+        <AutoForm
+          ref="autoForm"
+          height={height}
+          initialModel={{}}
+          columns={this.state.modalColumns}
+          columnViews={ columnViews }
+          >
+        </AutoForm>
+
+       { this.state.modalError }
+
+      </div>
+      <footer className="slds-modal__footer">
+      <button onClick={this.onHideModal.bind(this)} className="slds-button slds-button_neutral">Cancelar</button>
+      <button onClick={this.onNewSave.bind(this)} className="slds-button slds-button_brand">Guardar</button>
+      </footer>
+      </div>
+      </section>
+      <div className="slds-backdrop slds-backdrop_open"></div>
+      </div>
+    }
+
   renderItems(){
     var _this = this;
     return this.state.filteredItems.map(function(item){
@@ -73,14 +134,12 @@ class DataLookup extends React.Component {
       <svg className="slds-button__icon" aria-hidden="true">
         <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
       </svg>
-      <span className="slds-assistive-text">Remove selected option</span>
     </button>
-    else return <span className="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
-        <svg className="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
-          <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
-        </svg>
-        <span className="slds-assistive-text">Description of icon</span>
-      </span>
+    else return <button onClick={this.onNew.bind(this)}  className="slds-button slds-button_icon slds-input__icon slds-input__icon_right">
+      <svg className="slds-button__icon" aria-hidden="true">
+        <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+      </svg>
+    </button>
   }
 
   render(){
@@ -104,6 +163,7 @@ class DataLookup extends React.Component {
           </div>
         </div>
       </div>
+      {this.renderModal()}
     </div>
   }
 

@@ -68,7 +68,7 @@ class Menu extends React.Component {
   className={classes}>
   <button className="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="Show More">
     <svg className="slds-button__icon" aria-hidden="true">
-      <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+      <use xlinkHref={"/assets/icons/utility-sprite/svg/symbols.svg#"+(this.props.icon || "down")} />
     </svg>
     <span className="slds-assistive-text">Show More</span>
   </button>

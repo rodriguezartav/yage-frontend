@@ -33,7 +33,7 @@ UI.onActionClick = function(id, action){
 UI.onRowClick = function(id){
   UI.gridScrolledY = Business.instance.app.refs.grid.state.scrolled;
   var app = Business.instance.app;
-  var edit = app.props.edit;
+  var edit = app.props.edit||[];
   var editColumns = app.props.editColumns;
   var action = "save";
 

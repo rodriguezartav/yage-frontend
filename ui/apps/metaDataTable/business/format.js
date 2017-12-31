@@ -65,7 +65,7 @@ Format.integer = function(value,column,row){
 }
 
 Format.relation = function(value, column, row){
-  var formatValue = "Admin"
+  var formatValue = ""
   if( value > 1 ){
     formatValue = row[column.titleField];
   }

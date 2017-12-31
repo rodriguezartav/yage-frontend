@@ -4,5 +4,5 @@ export default  {
   headerColumnHeight: 30,
   fontSize: 10.2,
   rowHeight: 30,
-  diversityThesrshold:10
+  diversityThesrshold: 1000
 }

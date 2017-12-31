@@ -13,7 +13,6 @@ class GroupPlaceHolder extends React.Component {
 
   onGroupClick(e){
     var field = e.currentTarget.dataset.field;
-    console.log(field);
     UI.onScrollGroupClick(field);
   }
 
@@ -41,7 +40,6 @@ class GroupPlaceHolder extends React.Component {
   render(){
     var _this =this;
     if( this.props.groupFieldDiversity > Ops.diversityThesrshold ) return null;
-
 
     var groupItems = this.props.groupFields.unique.map(function(field){
       return _this.renderItem(field, _this.props.groupFields.details[field]);
