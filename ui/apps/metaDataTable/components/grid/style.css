@@ -125,5 +125,6 @@
 }
 
 .content-static-cell{
-
+  text-decoration: underline;
+  cursor: pointer;
 }

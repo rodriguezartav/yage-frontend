@@ -104,7 +104,7 @@ class Cell extends React.PureComponent {
     var actions = this.props.listColumnsActions || [];
     if( this.props.scrollingY || actions.length == 0) return null;
     return <div style={{position: "absolute", right: 3, top: 5}}>
-      <IconButton onClick={ _this.onIconClick.bind(_this) } icon="switch" />
+      <IconButton noBorder="true" onClick={ _this.onIconClick.bind(_this) } icon="switch" />
     </div>
   }
 
