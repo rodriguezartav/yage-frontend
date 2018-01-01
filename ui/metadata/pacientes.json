@@ -43,6 +43,20 @@
   "listColumns":[
     "nombre","email","telefono","reservacion"
   ],
+  "listColumnsActions": [
+    { "type": "api",
+      "route": "api/paciente/sendEmail?email=invitacion",
+      "icon": "email",
+      "name": "Email Invitación",
+      "payloadFields": ["id"]
+    },
+    { "type": "api",
+      "route": "api/paciente/sendEmail?email=registrado",
+      "icon": "email",
+      "name": "Email Información",
+      "payloadFields": ["id"]
+    }
+  ],
   "views": [
     {"type": "data", "name":"allWithReservacionFromPeriodo?periodo=2018-1","icon":"list"}
   ],

@@ -2,10 +2,15 @@ import moment from "moment";
 import Business from "./business";
 import Contents from "./business/contents";
 
+import Toast from "../../components/toast";
+
+
 var UI = {
   business: null,
   editingCell: null,
-  staticCell: null
+  staticCell: null,
+  notifications: [],
+  lastError: null
 };
 
 UI.setSize = function(){
@@ -21,13 +26,67 @@ UI.setSize = function(){
 }
 window.onresize = UI.setSize;
 
+UI.toastError = function(err){
+  UI.notifications = UI.notifications.concat( Toast.parseError(err) );
+  Business.instance.app.setState({ showToast: true, notifications: UI.notifications })
+}
+
+UI.toastSuccess = function(msg){
+  UI.notifications.push( { type: "success", message: msg,dismissed: false, dismiss:"auto" } );
+  Business.instance.app.setState({ showToast: true, notifications: UI.notifications})
+}
+
+UI.toastInfo = function(msg){
+  UI.notifications.push( { type: "info", message: msg, dismissed: false, dismiss:"auto" } );
+  Business.instance.app.setState({ showToast: true, notifications: UI.notifications })
+}
+
+UI.toastExpired = function(notification){
+  notification.dismissed=true;
+  var done=true;
+  UI.notifications.forEach( function(notification){
+    if(notification.dismissed==false) done=false
+  })
+  if(done) Business.instance.app.setState({ showToast: false });
+  else Business.instance.app.forceUpdate();
+}
 
 UI.onScrollGroupClick = function(field){
   Business.instance.app.refs.grid.scrollToField(field);
 }
 
+
+UI.onSaveNewModal = function(item){
+  Business.instance.app.setState({modalAction: null});
+  Contents.save(item);
+  Contents.updateOriginal(item);
+  Business.instance.reComputeRows();
+  UI.resetStaticCells();
+}
+
+UI.onHideNewModal = function(){
+  Business.instance.app.setState({modalAction: null});
+}
+
 UI.onActionClick = function(id, action){
-  Business.instance.app.setState({ content: Contents.one( id ), action: action })
+  var content = Contents.one( id );
+  var payload = {}
+  action.payloadFields.forEach(function(field){
+    payload[field] = content[field];
+  })
+  action.payload = payload;
+
+  console.log(action);
+  if( action.type == "newModal" ){
+    Business.instance.app.setState({modalAction: action});
+  }
+  else if( action.type == "api" ){
+    Business.instance.rowAction(action, payload);
+    UI.resetStaticCells();
+  }
+  else{
+    Business.instance.app.setState({ content: content , action: action })
+  }
 }
 
 UI.onRowClick = function(id){

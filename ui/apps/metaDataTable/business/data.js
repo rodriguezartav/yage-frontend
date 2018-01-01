@@ -14,9 +14,7 @@ export default function(Business){
       else _this.computeRows();
     })
     .catch(function(err){
-      var errors = _this.app.state.errors;
-      errors.push({location: "data.js/load",error: err});
-      _this.app.setState({toast: "Error cargando datos.",errors: errors})
+      UI.toastError(err);
       console.log(err.stack);
     })
   }
@@ -60,10 +58,8 @@ export default function(Business){
       })
     })
     .catch(function(err){
-      var errors = _this.app.state.errors;
-      errors.push({location: "data.js/groupActions",error: err});
-      _this.app.setState({toast: "Error guardando datos.",errors: errors})
-      console.log(err);
+      UI.toastError(err);
+      console.log(err.stack);
     })
   }
 
@@ -71,17 +67,13 @@ export default function(Business){
     var _this = this;
     var error = "";
     var delta = Contents.getDeltaObject(row);
-    return Ajax.post("/"+this.app.props.route + "/"+action,delta)
-    .then(function(content){
-      Contents.save(content);
-      Contents.updateOriginal(content);
-      _this.app.setState({ content: null });
+    return Ajax.post("/"+action.route,delta)
+    .then(function(){
+      UI.toastSuccess("Se completo la operación");
     })
     .catch(function(err){
-      var errors = _this.app.state.errors;
-      errors.push({location: "data.js/rowAction",error: err});
-      _this.app.setState({toast: "Error guardando datos.",errors: errors})
-      console.log(err);
+      UI.toastError(err);
+      console.log(err.stack);
     })
   }
 
@@ -96,12 +88,11 @@ export default function(Business){
       Contents.updateOriginal(content);
       _this.app.setState({ content: null })
       _this.reComputeRows();
+      UI.toastSuccess("Se guardaron los cambios");
     })
     .catch(function(err){
-      var errors = _this.app.state.errors;
-      errors.push({location: "data.js/save",error: err});
-      _this.app.setState({toast: "Error guardando datos.",errors: errors})
-      console.log(err);
+      UI.toastError(err);
+      console.log(err.stack);
     })
   }
 

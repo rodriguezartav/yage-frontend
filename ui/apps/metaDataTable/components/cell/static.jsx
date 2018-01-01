@@ -46,14 +46,14 @@ class Cell extends React.PureComponent {
 
   onActionClick(e){
     var action = e.currentTarget.dataset.action;
-    UI.onActionClick(this.props.row.id, action);
+    UI.onActionClick(this.props.row.id, JSON.parse(action));
   }
 
   renderActions(){
     var _this = this;
-    return this.props.actions.map(function(action){
-      return <li key={action} className="slds-dropdown__item" role="presentation">
-        <a data-action={action.icon} onClick={_this.onActionClick.bind(_this)} role="menuitem" >
+    return this.props.listColumnsActions.map(function(action){
+      return <li key={action.name} className="slds-dropdown__item" role="presentation">
+        <a data-action={JSON.stringify(action)}  onClick={_this.onActionClick.bind(_this)} role="menuitem" >
           <span className="slds-truncate" title={action.name}>{action.name}</span>
           <svg className="slds-icon slds-icon_x-small slds-icon-text-default slds-m-left_small slds-shrink-none" aria-hidden="true">
             <use xlinkHref={"/assets/icons/utility-sprite/svg/symbols.svg#"+action.icon} />
@@ -66,10 +66,10 @@ class Cell extends React.PureComponent {
   getPopOverStyle(){
     var value = this.props.row[this.props.column.name];
     var style= { position:"absolute", left: this.props.xOffset, minWidth: this.props.style.width, maxWidth: 200 }
-    if( this.state.y + (this.props.actions.length * 45 )  < this.props.height){
+    if( this.state.y + (this.props.listColumnsActions.length * 45 )  < this.props.height){
       style.top= this.state.y + this.props.scrolled;
     }else{
-      style.top= this.state.y + this.props.scrolled - (this.props.actions.length * 45 );
+      style.top= this.state.y + this.props.scrolled - (this.props.listColumnsActions.length * 32 );
       style.bottom =1;
     }
     return style;
@@ -88,7 +88,7 @@ class Cell extends React.PureComponent {
       </button>
       <div className="slds-popover__body" >
 
-        <div className="">
+        <div className="slds-dropdown_left">
           <ul className="slds-dropdown__list" role="menu">
            {this.renderActions()}
           </ul>
@@ -101,7 +101,7 @@ class Cell extends React.PureComponent {
 
   renderIcon(){
     var _this = this;
-    var actions = this.props.actions || [];
+    var actions = this.props.listColumnsActions || [];
     if( this.props.scrollingY || actions.length == 0) return null;
     return <div style={{position: "absolute", right: 3, top: 5}}>
       <IconButton onClick={ _this.onIconClick.bind(_this) } icon="switch" />

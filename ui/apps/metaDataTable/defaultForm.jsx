@@ -14,13 +14,13 @@ class EditForm extends React.Component {
     this.props.onSubmit(this.refs.autoForm.state.model);
   }
 
-  renderHeader(){
+  renderHeader(title){
     return  <div className="slds-page-header slds-m-bottom_small"  >
       <div className="slds-grid">
         <div className="slds-col slds-has-flexi-truncate">
           <div className="slds-media slds-no-space slds-grow">
             <div className="slds-media__figure">
-              <span className="slds-icon_container slds-icon-standard-user" title="Description of icon when needed">
+              <span className="slds-icon_container slds-icon-standard-user" >
                 <svg className="slds-icon" aria-hidden="true">
                   <use  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#user"></use>
                 </svg>
@@ -28,7 +28,7 @@ class EditForm extends React.Component {
             </div>
             <div className="slds-media__body">
               <p className="slds-text-title_caps slds-line-height_reset">Record Type</p>
-              <h1 className="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" >{this.props.initialModel[this.props.principalColumn]}</h1>
+              <h1 className="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" >{title || this.props.title}</h1>
             </div>
           </div>
         </div>
@@ -47,11 +47,18 @@ class EditForm extends React.Component {
     var model = Contents.one(this.props.initialModel.id) || {};
     var columns = Columns.getAsArray();
     var columnViews;
-    if( model.id) columnViews = this.props.editColumns;
-    else columnViews = this.props.appProps.newColumns;
+    var title = ""
+    if( model.id){
+      columnViews = this.props.editColumns;
+      title="Editando " + model[this.props.appProps.principalColumn];
+    }
+    else{
+      title="Creando Nuevo"
+      columnViews = this.props.appProps.newColumns;
+    }
 
     return <div>
-      {this.renderHeader()}
+      {this.renderHeader(title)}
       <AutoForm
         ref="autoForm"
         height={this.props.height}
@@ -59,6 +66,7 @@ class EditForm extends React.Component {
         principalColumn={this.props.appProps.principalColumn}
         columns={columns}
         columnViews={ columnViews }
+
         >
       </AutoForm>
 

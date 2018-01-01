@@ -160,7 +160,7 @@ export default class ExampleGrid extends React.Component {
 
      return <StaticCell
       scrollingY={ this.state.scrollingY }
-      actions={ this.props.actions }
+      listColumnsActions={ this.props.listColumnsActions }
       key={ row.id+"-"+column.name }
       row={ row }
       column={ column }

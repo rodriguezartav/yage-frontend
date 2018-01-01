@@ -3,6 +3,8 @@ import UI from "./ui";
 import LookUpItem from "./lookUpItem"
 import Data from "./data";
 import AutoForm from "../autoForm";
+import NewModal from "../newModal";
+
 
 class DataLookup extends React.Component {
 
@@ -36,20 +38,17 @@ class DataLookup extends React.Component {
   }
 
   onNew(){
-    var _this = this;
-    Data.onNew(this)
-    .then(function(results){
-      _this.setState({showModal: true, modalColumns: results});
-    })
+    this.setState({showModal: true})
   }
 
-  onNewSave(){
-    var model = this.refs.autoForm.state.model;
-    Data.onSave(this, model);
+  onSaveModal(result){
+    Data.load(this);
+    this.props.onSelect(this.props.onSelectColumn, result[this.props.itemKey] , result);
+    this.setState({ showModal:false });
   }
 
   onHideModal(){
-    this.setState({showModal: false,modalColumns: [] });
+    this.setState({showModal: false});
   }
 
   onClose(){
@@ -68,55 +67,23 @@ class DataLookup extends React.Component {
     var items = [];
     this.state.items.forEach(function(item){
       var itemValue = item[_this.props.principalColumn];
-      if(itemValue) itemValue =itemValue.toLowerCase();
-      if( itemValue.indexOf(text) > -1 ) items.push(item);
+      if(itemValue){
+        itemValue =itemValue.toLowerCase();
+        if( itemValue.indexOf(text) > -1 ) items.push(item);
+      }
     })
     this.setState({filteredItems: items, isOpen: true, selectedItem: null, searchText: text });
   }
 
-
-
-    renderModal(){
-      if(!this.state.showModal) return null;
-      var height = this.props.viewHeight * 0.75;
-      var columnViews = this.state.modalColumns.map(function(column){ return column.name; })
-
-
-      return <div  style={{height: height}}>
-      <section role="dialog" tabIndex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" className="slds-modal slds-fade-in-open">
-      <div className="slds-modal__container">
-      <header className="slds-modal__header">
-      <button onClick={this.onHideModal.bind(this)} className="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
-      <svg className="slds-button__icon slds-button__icon_large" aria-hidden="true">
-      <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
-      </svg>
-      <span className="slds-assistive-text">Close</span>
-      </button>
-      <h2 id="modal-heading-01" className="slds-text-heading_medium slds-hyphenate">Crear</h2>
-      </header>
-      <div className="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-
-        <AutoForm
-          ref="autoForm"
-          height={height}
-          initialModel={{}}
-          columns={this.state.modalColumns}
-          columnViews={ columnViews }
-          >
-        </AutoForm>
-
-       { this.state.modalError }
-
-      </div>
-      <footer className="slds-modal__footer">
-      <button onClick={this.onHideModal.bind(this)} className="slds-button slds-button_neutral">Cancelar</button>
-      <button onClick={this.onNewSave.bind(this)} className="slds-button slds-button_brand">Guardar</button>
-      </footer>
-      </div>
-      </section>
-      <div className="slds-backdrop slds-backdrop_open"></div>
-      </div>
-    }
+  renderModal(){
+    if(!this.state.showModal) return null;
+    return <NewModal
+      route={this.props.column.route}
+      onSave={this.onSaveModal.bind(this)}
+      onClose={this.onHideModal.bind(this)}
+      title={"Crear " + this.props.label}
+    />
+  }
 
   renderItems(){
     var _this = this;

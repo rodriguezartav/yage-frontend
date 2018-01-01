@@ -23,6 +23,10 @@ class FormElement extends React.Component {
      this.props.setProperty(e.currentTarget.dataset.col, e.target.value)
    }
 
+  onChangeInputNumber(e){
+    this.props.setProperty(e.currentTarget.dataset.col, parseFloat(e.target.value))
+  }
+
   onChangeBooleanInput(name,checked){
     this.props.setProperty(name,checked);
   }
@@ -39,7 +43,7 @@ class FormElement extends React.Component {
     if(!colType) colType = "text";
     if(colType == "number") return <input
       data-col={col.name}
-      onChange={this.onChangeInput.bind(this)}
+      onChange={this.onChangeInputNumber.bind(this)}
       value={value}
       type="number"
       className="slds-input slds-m-bottom_small"
@@ -111,6 +115,7 @@ class FormElement extends React.Component {
 
   render(){
     var col = this.props.column;
+    if(col.type == "hidden") return null;
     var _this=this;
     var classError = "";
     var label = <label className="slds-form-element__label" htmlFor="input-unique-id">{col.title}</label>;

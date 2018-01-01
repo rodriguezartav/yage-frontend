@@ -1,5 +1,5 @@
-.slds-global-header__logo{
-	background-color: #00a1df;
+.slds-global-header__logo a{
+	color: #00a1df;
 }
 
 .global-header-gray-button{

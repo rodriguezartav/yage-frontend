@@ -98,7 +98,7 @@ Columns.getColumnWidths = function(rows, columns) {
 
       if(column.maxWidth && contentCount > column.maxWidth )  contentCount = column.maxWidth;
 
-      if( col == props.principalColumn ) contentCount += 30;
+      if( col == props.principalColumn ) contentCount += 50;
       if( contentCount > columnWidths[col]) columnWidths[col] = contentCount;
     })
   })

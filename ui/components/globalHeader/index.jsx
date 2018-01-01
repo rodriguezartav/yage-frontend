@@ -17,6 +17,10 @@ class GlobalHeader extends React.Component {
           options: [{
             title: "Pacientes",
             link: "/metaDataTable.html?app=pacientes"
+          },
+          {
+            title: "Reservaciones",
+            link: "/metaDataTable.html?app=reservaciones"
           }]
         }]
       }
@@ -110,14 +114,14 @@ class GlobalHeader extends React.Component {
   <div className="slds-context-bar__primary">
     <div className="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
       <div className="slds-context-bar__icon-action">
-        <div className="slds-global-header__logo" style={{width: "6.8125rem"}}>
-          <a href="http://rodcocr.com/">
-            <img src="./assets/images/logo.svg" alt="" />
+        <div className="slds-global-header__logo" style={{width: "2.8125rem"}}>
+          <a>
+            <img style={{height: 30}} src="./assets/images/ion.svg" alt="" /> ION
           </a>
         </div>
       </div>
       <span className="slds-context-bar__label-action slds-context-bar__app-name">
-        <span className="slds-truncate" title="App Name">Digital</span>
+
       </span>
     </div>
   </div>
