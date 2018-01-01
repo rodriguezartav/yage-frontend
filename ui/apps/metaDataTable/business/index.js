@@ -6,11 +6,13 @@ import Contents from "./contents";
 import Columns from "./columns";
 import Sort from "./sort";
 import Filter from "./filter";
+import Logo from "./logo";
 
 const history = createHistory();
 
 function Business(app){
   var _this = this;
+  Logo.init(app);
   Columns.init( app.props );
   this.app = app;
   Auth.getAuthCookie();

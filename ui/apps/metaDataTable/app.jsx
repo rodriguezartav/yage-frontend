@@ -191,7 +191,7 @@ class App extends React.Component {
   render(){
 
     return <div>
-      <GlobalHeader errors={this.state.errors} user={this.state.user} type={"blue-button"}>
+      <GlobalHeader logoClass={this.state.logoAnimation} errors={this.state.errors} user={this.state.user} type={"blue-button"}>
       </GlobalHeader>
       <div className="tool-box slds-grid">
         {this.renderOptions()}

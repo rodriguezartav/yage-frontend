@@ -125,9 +125,9 @@ class GlobalHeader extends React.Component {
   <div className="slds-context-bar__primary">
     <div className="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
       <div className="slds-context-bar__icon-action">
-        <div className="slds-global-header__logo" style={{width: "2.8125rem"}}>
+        <div className="slds-global-header__logo" style={{width: "4.725rem"}}>
           <a>
-            <img style={{height: 30}} src="./assets/images/ion.svg" alt="" /> ION
+            YAGE<img className={this.props.logoClass||""} style={{height: 30}} src="./assets/images/ion.svg" alt="" />ION
           </a>
         </div>
       </div>

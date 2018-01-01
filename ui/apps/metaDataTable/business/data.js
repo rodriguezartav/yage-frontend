@@ -2,18 +2,22 @@ import {Ajax} from "../../../helpers";
 import UI from "../ui";
 import Contents from "./contents";
 import shortid from 'shortid';
+import Logo from "./logo";
 
 export default function(Business){
 
   Business.prototype.load = function(dataView){
     var _this = this;
+    Logo.httpStart();
     return Ajax.get("/"+this.app.props.route+"/"+dataView)
     .then(function(results){
+      Logo.httpEnd();
       Contents.load(results, _this.app, "contents");
       if(results.length == 0) _this.app.setState({ content: {} });
       else _this.computeRows();
     })
     .catch(function(err){
+      Logo.httpError();
       UI.toastError(err);
       console.log(err.stack);
     })

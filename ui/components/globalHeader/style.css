@@ -48,3 +48,33 @@
 .slds-context-bar__primary{
 	overflow: hidden;
 }
+
+.rotate{
+	animation: rotateLogo 2s ease infinite;
+	stroke: blue;
+}
+
+.done{
+	animation: done 1s ease 2;
+}
+
+.error{
+	animation: error 1s ease 5;
+}
+
+@keyframes rotateLogo {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes done {
+  0% { opacity: 0; }
+  100% { opacity: 1 }
+}
+
+@keyframes error {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+  75% { opacity: 1 }
+}
