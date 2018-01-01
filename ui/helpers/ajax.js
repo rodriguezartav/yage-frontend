@@ -9,7 +9,8 @@ Ajax.getURL = function(path,params){
 }
 
 Ajax.logout = function(){
-  window.location = Ajax.getURL("/login/login/logout");
+  Auth.setCookie("login");
+  window.location.reload();
 }
 
 Ajax.checkStatus = function(path){

@@ -36,6 +36,17 @@ class GlobalHeader extends React.Component {
     else this.setState({appsOpen: true});
   }
 
+  renderNotifications(){
+    return null;
+    return <li className="slds-dropdown-trigger slds-dropdown-trigger--click">
+          <button onClick={this.onLogout} className="slds-button slds-button--icon slds-button--icon-container slds-button--icon-small slds-global-header__button--icon" aria-haspopup="true" title="Notifications">
+            <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">
+              <use xlinkHref="./assets/icons/utility-sprite/svg/symbols.svg#notification"></use>
+            </svg>
+          </button>
+        </li>
+  }
+
   renderLogout(){
 
       return <li className="slds-dropdown-trigger slds-dropdown-trigger--click">
@@ -140,6 +151,7 @@ class GlobalHeader extends React.Component {
   <ul className="slds-global-header__item slds-grid slds-grid--vertical-align-center" href="http://rodcocr.com/">
     {this.props.children}
     {this.renderLogout()}
+    {this.renderNotifications()}
   </ul>
 </div>
   }
