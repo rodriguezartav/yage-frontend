@@ -22,7 +22,8 @@
       "title":"Estado",
       "type":"select",
       "options":["nuevo","pagado","becado"],
-      "order":["nuevo","pagado","becado"]
+      "order":["nuevo","pagado","becado"],
+      "sumOnSort":"monto"
     },
       "total_personas":
       {
