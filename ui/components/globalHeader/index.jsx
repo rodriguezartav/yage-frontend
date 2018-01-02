@@ -2,28 +2,14 @@ import React from 'react';
 import Ajax from "../../helpers/ajax";
 import classnames from "classnames";
 import Style from "./style.css";
-
+import Menu from "../../metadata/menu.json";
 
 class GlobalHeader extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      appsOpen: false,
-      menu: {
-        items: [{
-          title: "Administracion",
-          subtitle: "Listas",
-          options: [{
-            title: "Pacientes",
-            link: "/metaDataTable.html?app=pacientes"
-          },
-          {
-            title: "Reservaciones",
-            link: "/metaDataTable.html?app=reservaciones"
-          }]
-        }]
-      }
+      appsOpen: false
     }
   }
 
@@ -77,7 +63,7 @@ class GlobalHeader extends React.Component {
 
   renderMenuItems(){
     var _this = this;
-    return this.state.menu.items.map(function(item){
+    return Menu.items.map(function(item){
       return _this.renderMenuItem(item)
     })
   }
@@ -127,7 +113,7 @@ class GlobalHeader extends React.Component {
       <div className="slds-context-bar__icon-action">
         <div className="slds-global-header__logo" style={{width: "4.725rem"}}>
           <a>
-            YAGE<img className={this.props.logoClass||""} style={{height: 30}} src="./assets/images/ion.svg" alt="" />ION
+            {this.props.ionName}<img className={this.props.logoClass||""} style={{height: 30}} src="./assets/images/ion.svg" alt="" />ION
           </a>
         </div>
       </div>

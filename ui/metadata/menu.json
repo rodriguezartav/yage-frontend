@@ -1,0 +1,14 @@
+{
+        "items": [{
+          "title": "Administracion",
+          "subtitle": "Listas",
+          "options": [{
+            "title": "Pacientes",
+            "link": "/metaDataTable.html?app=pacientes"
+          },
+          {
+            "title": "Reservaciones",
+            "link": "/metaDataTable.html?app=reservaciones"
+          }]
+        }]
+      }
