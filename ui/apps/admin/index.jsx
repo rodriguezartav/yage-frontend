@@ -6,7 +6,7 @@ import Metadata from '../../metadata';
 
 
 const render = (Component) => {
-  var App = Metadata(getParameterByName("app"));
+  var App = Metadata(getParameterByName("app")||"pacientes");
 
   ReactDOM.render(
     <AppContainer>

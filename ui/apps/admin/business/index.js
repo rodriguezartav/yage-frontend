@@ -33,7 +33,8 @@ function Business(app){
       totalWidth: 0,
       columnWidths: []
     },
-    actions: []
+    actions: [],
+    logoAnimation: "rotate"
 
   };
   Business.business = Business.instance = this;
