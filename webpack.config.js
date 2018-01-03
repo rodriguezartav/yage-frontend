@@ -10,7 +10,7 @@ module.exports = {
   context: path.resolve(__dirname, './ui'),
   entry: {
     home: './apps/home/index.jsx',
-    app: './apps/app/index.jsx',
+    table: './apps/table/index.jsx',
     reservaciones: './apps/reservaciones/index.jsx'
   },
   output: {
@@ -85,8 +85,8 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'ui','template.html'),
-      filename: 'app.html',
-      chunks: ['app','style'],
+      filename: 'table.html',
+      chunks: ['table','style'],
       inject: 'body'
     }),
 
