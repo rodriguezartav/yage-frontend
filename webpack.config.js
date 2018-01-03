@@ -10,7 +10,7 @@ module.exports = {
   context: path.resolve(__dirname, './ui'),
   entry: {
     home: './apps/home/index.jsx',
-    metaDataTable: './apps/metaDataTable/index.jsx',
+    admin: './apps/admin/index.jsx',
     reservaciones: './apps/reservaciones/index.jsx'
   },
   output: {
@@ -85,8 +85,8 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'ui','template.html'),
-      filename: 'metaDataTable.html',
-      chunks: ['metaDataTable','style'],
+      filename: 'admin.html',
+      chunks: ['admin','style'],
       inject: 'body'
     }),
 
