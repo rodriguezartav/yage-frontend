@@ -9,7 +9,7 @@ module.exports = {
   entry: {
    home: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/home/index.jsx'],
    reservaciones: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/reservaciones/index.jsx'],
-   admin: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/admin/index.jsx'],
+   app: ['react-hot-loader/patch','webpack/hot/only-dev-server','webpack-dev-server/client?http://localhost:8080','./apps/app/index.jsx'],
   },
   output: {
     filename: '[name].js',
@@ -85,8 +85,8 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'ui','template.html'),
-      filename: 'admin.html',
-      chunks: ['admin','style'],
+      filename: 'app.html',
+      chunks: ['app','style'],
       inject: 'body'
     }),
     new CopyWebpackPlugin([
