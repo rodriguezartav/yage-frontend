@@ -48,7 +48,8 @@
     "style-loader": "^0.18.2",
     "through2": "^2.0.3",
     "type-name": "^2.0.2",
-    "webpack": "^3.0.0"
+    "webpack": "^3.0.0",
+    "ion81":"1.0.0"
   },
   "devDependencies": {
     "aws-sdk": "^2.77.0",

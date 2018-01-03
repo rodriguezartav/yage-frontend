@@ -1,4 +1,4 @@
-var Ajax = require( '../../../helpers').Ajax;
+var Ajax = require( 'ion81/helpers').Ajax;
 var UI = require("../ui");
 
 module.exports = function(Business){

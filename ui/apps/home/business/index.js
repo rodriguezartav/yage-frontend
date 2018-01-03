@@ -1,4 +1,4 @@
-import {Ajax,Auth} from "../../../helpers";
+import {Ajax,Auth} from "ion81/helpers";
 import createHistory from 'history/createHashHistory';
 
 const history = createHistory();

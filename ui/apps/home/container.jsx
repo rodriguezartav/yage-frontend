@@ -1,5 +1,4 @@
 import React from 'react'
-import {GlobalHeader,PageHeader,GlobalHeaderTabs,SmartTable,AutoForm,ButtonBar}  from '../../components';
 import Business from "./business"
 import Menu from './menu';
 

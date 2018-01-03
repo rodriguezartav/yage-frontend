@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
+import App from 'ion81/apps/metaDataTable/app';
 import { AppContainer } from 'react-hot-loader';
 import Metadata from '../../metadata';
-
+import Menu from "../../metadata/menu.json";
 
 const render = (Component) => {
-  var App = Metadata(getParameterByName("app")||"reservaciones");
+  var App = Metadata(getParameterByName("app")||"pacientes");
+  if(!App) return document.getElementById('root').innerHTML("App Not Found");
 
   ReactDOM.render(
     <AppContainer>
-      <Component {...App} />
+      <Component ionName="Yage" menu={Menu} {...App} />
     </AppContainer>
 
    , document.getElementById('root')
@@ -21,7 +22,7 @@ const render = (Component) => {
 render(App);
 
 if (module.hot){
-  module.hot.accept('./app', () => {
+  module.hot.accept('ion81/apps/metaDataTable/app', () => {
     render(App);
   })
 }

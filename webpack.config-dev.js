@@ -22,19 +22,23 @@ module.exports = {
     hot: true,
   },
   resolve: {
-     extensions: ['.js', '.jsx']
+     extensions: ['.js', '.jsx'],
+      alias: {
+       'react': path.resolve(__dirname, 'node_modules', 'react'),
+       'react-dom': path.resolve(__dirname, 'node_modules', 'react-dom'),
+     }
    },
   devtool: "eval",
   module: {
       rules: [
       {
           test: /\.css$/,
-
+          exclude: excludeNodeModulesExcept(["ion81"]),
           use: [ 'style-loader', 'css-loader' ]
           },
         {
           test: /\.js$/,
-          exclude: [/node_modules/],
+          exclude: excludeNodeModulesExcept(["ion81"]),
           use: [{
             loader: 'babel-loader',
             options: { cacheDirectory: true },
@@ -42,7 +46,7 @@ module.exports = {
         },
         {
           test: /\.jsx$/,
-          exclude: [/node_modules/],
+          exclude: excludeNodeModulesExcept(["ion81"]),
           use: [{
             loader: 'babel-loader',
             options: { cacheDirectory: true }
@@ -86,7 +90,27 @@ module.exports = {
       inject: 'body'
     }),
     new CopyWebpackPlugin([
-      { from: 'assets',to: "assets" }
+      { from: '../node_modules/ion81/assets',to: "assets" }
+    ]),
+    new CopyWebpackPlugin([
+      { from: 'public',to: "public" }
     ])
   ],
 };
+
+function excludeNodeModulesExcept (modules)
+{
+    var pathSep = path.sep;
+    if (pathSep == '\\') // must be quoted for use in a regexp:
+        pathSep = '\\\\';
+    var moduleRegExps = modules.map (function (modName) { return new RegExp("node_modules" + pathSep + modName)})
+
+    return function (modulePath) {
+        if (/node_modules/.test(modulePath)) {
+            for (var i = 0; i < moduleRegExps.length; i ++)
+                if (moduleRegExps[i].test(modulePath)) return false;
+            return true;
+        }
+        return false;
+    };
+}

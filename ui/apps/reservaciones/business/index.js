@@ -1,4 +1,4 @@
-var Ajax = require("../../../helpers/ajax");
+var Ajax = require("ion81/helpers/ajax");
 var Data = require("./data");
 
 function Business(app){
