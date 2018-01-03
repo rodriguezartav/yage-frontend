@@ -4,11 +4,11 @@
           "subtitle": "Listas",
           "options": [{
             "title": "Pacientes",
-            "link": "/metaDataTable.html?app=pacientes"
+            "link": "/admin.html?app=pacientes"
           },
           {
             "title": "Reservaciones",
-            "link": "/metaDataTable.html?app=reservaciones"
+            "link": "/admin.html?app=reservaciones"
           }]
         }]
       }

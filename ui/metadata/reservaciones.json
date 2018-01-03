@@ -32,31 +32,7 @@
       "sabado":{ "title":"Pax Sabado", "type":"number" },
       "domingo":{ "title":"Pax Domingo", "type":"number" }
     },
-  "newColumns": [
-    "Detalles del Paciente",
-    "paciente_id",
-    "telefono",
-    "Sobre la Reservación",
-    "jueves",
-    "sabado",
-    "domingo",
-    "Resumen y Costos",
-    "total_personas",
-    "monto",
-    "saldo"
-  ],
-  "editColumns": [
-    "Detalles del Contacto",
-    "paciente_id",
-    "Detalles de la reservación",
-    "jueves",
-    "sabado",
-    "domingo",
-    "Resumen y Costos",
-    "total_personas",
-    "monto",
-    "saldo"
-  ],
+
   "listColumns":[
     "paciente_id","estado","jueves","sabado","domingo","total_personas","monto","saldo"
   ],
@@ -69,6 +45,19 @@
       "payloadFields": ["id"]
     }
   ],
+  "editAction":
+    { "type": "newModal",
+      "route": "api/reservacion/getColumnsForEdit",
+      "name": "Pagar",
+      "title": "Editar"
+    }
+  ,
+  "createAction":
+    { "type": "newModal",
+      "route": "api/reservacion/getColumnsForCreate",
+      "name": "Pagar",
+      "title": "Crear"
+  },
   "views": [
     {"type": "data", "name":"allFromPeriod?periodo=2018-1","icon":"list"}
   ],

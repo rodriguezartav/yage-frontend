@@ -57,6 +57,19 @@
       "payloadFields": ["id"]
     }
   ],
+  "editAction":
+    { "type": "newModalPage",
+      "route": "api/paciente/getColumnsForEdit",
+      "name": "Pagar",
+      "title": "Crear Pago"
+    }
+  ,
+  "createAction":
+    { "type": "newModal",
+      "route": "api/paciente/getColumnsForCreate",
+      "name": "Pagar",
+      "title": "Crear Pago"
+  },
   "views": [
     {"type": "data", "name":"allWithReservacionFromPeriodo?periodo=2018-1","icon":"list"}
   ],
