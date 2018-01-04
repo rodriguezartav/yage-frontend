@@ -27,22 +27,29 @@
     },
       "total_personas": { "title": "Pax Total", "sumOnSort":"monto", "type":"number" },
       "monto":{"title":"Monto","type":"number" },
-      "saldo":{ "title":"Saldo", "type":"number" },
+      "saldo":{ "title":"Saldo", "type":"number", "editable": false },
       "jueves":{ "title":"Pax Jueves", "type":"number" },
       "sabado":{ "title":"Pax Sabado", "type":"number" },
-      "domingo":{ "title":"Pax Domingo", "type":"number" }
+      "domingo":{ "title":"Pax Domingo", "type":"number" },
+      "observacion":{ "title":"Observación", "type":"string", "editable":true }
     },
 
   "listColumns":[
-    "paciente_id","estado","jueves","sabado","domingo","total_personas","monto","saldo"
+    "paciente_id","estado","observacion","jueves","sabado","domingo","total_personas","monto","saldo"
   ],
   "listColumnsActions": [
     { "type": "newModal",
-      "route": "api/pago/createFromReservacion",
-      "icon": "success",
+      "route": "api/pago/getColumnsForCreate",
+      "icon": "edit_form",
       "name": "Pagar",
       "title": "Crear Pago",
       "payloadFields": ["id"]
+    },
+    { "type": "newModal",
+      "route": "api/pago/getColumnsForBecar",
+      "icon": "block_visitor",
+      "name": "Becar",
+      "title": "Becar"
     }
   ],
   "editAction":
