@@ -6,7 +6,7 @@ import Metadata from '../../metadata';
 import Menu from "../../metadata/menu.json";
 
 const render = (Component) => {
-  var App = Metadata(getParameterByName("app")||"pacientes");
+  var App = Metadata(getParameterByName("app")||"reservaciones");
   if(!App) return document.getElementById('root').innerHTML("App Not Found");
 
   ReactDOM.render(
