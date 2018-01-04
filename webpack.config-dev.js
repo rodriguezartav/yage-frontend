@@ -61,7 +61,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify("development"),
-        API_URL: process.env.MOCK ? JSON.stringify("http://localhost:3001") : JSON.stringify("http://localhost:3000")
+        API_URL: process.env.MOCK ? JSON.stringify("http://localhost:3001") : JSON.stringify("http://localhost:3000"),
+        DOMAIN: JSON.stringify("ceremoniacusingas.org")
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
