@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const npmPackage = require("./package.json");
 
 module.exports = {
   cache: true,
@@ -62,7 +63,8 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify("development"),
         API_URL: process.env.MOCK ? JSON.stringify("http://localhost:3001") : JSON.stringify("http://localhost:3000"),
-        DOMAIN: JSON.stringify("ceremoniacusingas.org")
+        DOMAIN: JSON.stringify("ceremoniacusingas.org"),
+        VERSION: JSON.stringify(npmPackage.dependencies.ion81)
       }
     }),
     new webpack.HotModuleReplacementPlugin(),

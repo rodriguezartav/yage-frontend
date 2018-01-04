@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 var CompressionPlugin = require("compression-webpack-plugin");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+const npmPackage = require("./package.json");
 
 module.exports = {
   context: path.resolve(__dirname, './ui'),
@@ -61,7 +62,8 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         API_URL: process.env.NODE_ENV == "staging" ? JSON.stringify("https://apistaging.ceremoniacusingas.org") : JSON.stringify("https://api.ceremoniacusingas.org"),
-        DOMAIN: JSON.stringify("ceremoniacusingas.org")
+        DOMAIN: JSON.stringify("ceremoniacusingas.org"),
+        VERSION: JSON.stringify(npmPackage.dependencies.ion81)
       }
     }),
     new CleanWebpackPlugin(["dist/*.js","dist/*.css","dist/*.html","dist/*.map","dist/*.gz"], {verbose: true}),
