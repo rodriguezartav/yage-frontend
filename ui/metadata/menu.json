@@ -9,6 +9,11 @@
           {
             "title": "Reservaciones",
             "link": "/table.html?app=reservaciones"
-          }]
+          },
+          {
+            "title": "Pagos",
+            "link": "/table.html?app=pagos"
+          }
+        ]
         }]
       }

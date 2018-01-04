@@ -1,0 +1,42 @@
+{
+  "groupBy": "estado",
+  "principalColumn": "id",
+  "columns": {
+    "__paciente__id":{
+      "title":"Paciente",
+      "type":"relation",
+      "titleField": "__paciente__nombre",
+      "maxWidth":190
+    },
+    "monto":{"title":"Monto","type":"number","editable":false },
+    "detalles":{ "title":"Detalles", "type":"string" }
+  },
+
+  "listColumns":[
+    "__paciente__id","monto","detalles"
+  ],
+  "listColumnsActions": [
+
+  ],
+  "editAction":
+    { "type": "newModal",
+      "route": "",
+      "name": "Pagar",
+      "title": "Editar"
+    }
+  ,
+  "createAction":
+    { "type": "newModal",
+      "route": "",
+      "name": "Pagar",
+      "title": "Crear"
+  },
+  "views": [
+    {"type": "data", "name":"allFromPeriod?periodo=2018-1","icon":"list"}
+  ],
+  "route": "api/pago",
+  "newComponent": "new",
+  "editComponnt": "edit"
+}
+
+
