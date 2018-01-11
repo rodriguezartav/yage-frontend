@@ -57,7 +57,10 @@ module.exports = {
 
     ],
   },
-    plugins: [
+    plugins: ( process.env.NODE_ENV == "production" ? [new webpack.optimize.UglifyJsPlugin({
+       sourceMap: true,
+       comments: false
+     })] : [] ).concat[
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -68,10 +71,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin(["dist/*.js","dist/*.css","dist/*.html","dist/*.map","dist/*.gz"], {verbose: true}),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new webpack.optimize.UglifyJsPlugin({
-       sourceMap: true,
-       comments: false
-     }),
+
       new ExtractTextPlugin({
         filename: '[name].[hash].css',
         allChunks: true,
