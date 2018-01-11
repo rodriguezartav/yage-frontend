@@ -74,8 +74,6 @@ module.exports = {
         allChunks: true,
       }),
 
-
-
     new HtmlWebpackPlugin({
       template: './template.html',
       filename: 'index.html',
