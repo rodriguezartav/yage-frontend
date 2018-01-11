@@ -1,5 +1,5 @@
 {"presets": [
-    ["es2015", {"modules": false, "targets": {"browsers": ["last 2 versions", "safari >= 7"]}} ],
+    ["es2015", {"modules": false, "targets": {"browsers": ["last 2 versions", "ie >= 10", "safari >= 7"]}} ],
     // webpack understands the native import syntax, and uses it for tree shaking
 
     "react",
