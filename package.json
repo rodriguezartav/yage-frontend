@@ -43,7 +43,7 @@
     "through2": "^2.0.3",
     "type-name": "^2.0.2",
     "webpack": "^3.0.0",
-    "ion81":"2.0.2"
+    "ion81":"2.0.9"
   },
   "devDependencies": {
     "aws-sdk": "^2.77.0",
