@@ -65,7 +65,7 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         API_URL: process.env.NODE_ENV == "staging" ? JSON.stringify("https://apistaging.ceremoniacusingas.org") : JSON.stringify("https://api.ceremoniacusingas.org"),
-        DOMAIN: JSON.stringify("ceremoniacusingas.org"),
+        DOMAIN: process.env.NODE_ENV == "staging" ? JSON.stringify("staging.ceremoniacusingas.org") : JSON.stringify("ceremoniacusingas.org"),
         VERSION: JSON.stringify(npmPackage.dependencies.ion81)
       }
     }),
