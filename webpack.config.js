@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 var CompressionPlugin = require("compression-webpack-plugin");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 const npmPackage = require("./package.json");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   context: path.resolve(__dirname, './ui'),
@@ -58,6 +59,8 @@ module.exports = {
     ],
   },
     plugins: [
+    new UglifyJsPlugin({sourceMap:true}),
+
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
