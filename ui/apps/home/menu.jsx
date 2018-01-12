@@ -7,7 +7,11 @@ class Menu extends React.Component {
   }
 
   onClick(e){
-    this.props.onChange(e.currentTarget.dataset.type);
+    var type;
+    var dataset = e.currentTarget.dataset;
+    if(dataset && dataset.type) type = dataset.type;
+    else type = e.currentTarget.getAttribute("type");
+    this.props.onChange(type);
   }
 
   render(){
