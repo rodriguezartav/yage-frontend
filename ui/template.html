@@ -8,8 +8,10 @@
 
 
     <script type="text/javascript">
-        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
             document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"><\/script>');
+            document.write('<script src="/path/to/svg4everybody.js"><\/script>');
+        }
     </script>
 
     <!-- BEGIN TRACKJS -->
@@ -46,5 +48,7 @@
     </div>
     <div id="login" ></div>
 
+
+    <script>if(svg4everybody) svg4everybody();</script>
   </body>
 </html>
