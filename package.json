@@ -29,7 +29,7 @@
     "history": "^4.7.2",
     "hoist-non-react-statics": "^2.3.1",
     "html-webpack-plugin": "^2.28.0",
-    "ion81": "2.0.12",
+    "ion81": "2.0.13",
     "json-loader": "^0.5.4",
     "moment": "^2.18.1",
     "numeral": "^2.0.6",
