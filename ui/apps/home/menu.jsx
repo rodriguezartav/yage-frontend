@@ -13,7 +13,7 @@ class MenuItem extends React.Component {
     var menuStyle = { padding: 5, borderBottom: "1px solid #ddd", color: "#fff", fontSize: 12 };
 
     return <div style={menuStyle} className="slds-col ">
-      <a onClick={this.onClick.bind(this)}>Inicio</a>
+      <a onClick={this.onClick.bind(this)}>{this.props.label}</a>
     </div>
 
   }
