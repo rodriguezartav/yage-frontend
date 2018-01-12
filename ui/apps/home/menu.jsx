@@ -6,6 +6,7 @@ class MenuItem extends React.Component {
   }
 
   onClick(){
+    if(this.props.type == "reservacion") return;
     this.props.onChange(this.props.type);
   }
 
@@ -13,7 +14,7 @@ class MenuItem extends React.Component {
     var menuStyle = { padding: 5, borderBottom: "1px solid #ddd", color: "#fff", fontSize: 12 };
 
     return <div style={menuStyle} className="slds-col ">
-      <a onClick={this.onClick.bind(this)}>{this.props.label}</a>
+      <a href={this.props.link || ""} onClick={this.onClick.bind(this)}>{this.props.label}</a>
     </div>
 
   }
@@ -37,7 +38,7 @@ class Menu extends React.Component {
         <MenuItem onChange={this.props.onChange} type="ceremonia" label="Sobre la Ceremonia"/>
         <MenuItem onChange={this.props.onChange} type="taita" label="Taita Lucho"/>
         <MenuItem onChange={this.props.onChange} type="codigo" label="Codigo de Conducta"/>
-        <MenuItem onChange={this.props.onChange} type="costos" label="Reservaciones"/>
+        <MenuItem link="/reservaciones.html" onChange={this.props.onChange} type="reservacion" label="Reservaciones"/>
       </div>
     </div>
   }
