@@ -12,7 +12,7 @@ class MenuItem extends React.Component {
   render(){
     var menuStyle = { padding: 5, borderBottom: "1px solid #ddd", color: "#fff", fontSize: 12 };
 
-    <div style={menuStyle} className="slds-col ">
+    return <div style={menuStyle} className="slds-col ">
       <a onClick={this.onClick.bind(this)}>Inicio</a>
     </div>
 
