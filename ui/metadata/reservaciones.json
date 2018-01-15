@@ -50,6 +50,18 @@
       "icon": "block_visitor",
       "name": "Becar",
       "title": "Becar"
+    },
+    { "type": "api",
+      "route": "api/reservacion/sendEmailSaldo",
+      "icon": "email",
+      "name": "Enviar Saldo",
+      "title": "Enviar Saldo"
+    },
+    { "type": "api",
+      "route": "api/reservacion/sendEmailInfo",
+      "icon": "email",
+      "name": "Enviar Info",
+      "title": "Enviar Info"
     }
   ],
   "editAction":
