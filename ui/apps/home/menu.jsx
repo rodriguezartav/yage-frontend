@@ -13,8 +13,11 @@ class MenuItem extends React.Component {
   render(){
     var menuStyle = { padding: 5, borderBottom: "1px solid #ddd", color: "#fff", fontSize: 12 };
 
-    return <div style={menuStyle} className="slds-col ">
-      <a href={this.props.link || ""} onClick={this.onClick.bind(this)}>{this.props.label}</a>
+    if( this.props.link ) return <div style={menuStyle} className="slds-col ">
+      <a href={this.props.link || ""} >{this.props.label}</a>
+    </div>
+    else return <div style={menuStyle} className="slds-col ">
+      <a onClick={this.onClick.bind(this)}>{this.props.label}</a>
     </div>
 
   }
