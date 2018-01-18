@@ -25,6 +25,10 @@
       "order":["nuevo","pagado","becado"],
       "sumOnSort":"monto"
     },
+    "emails":{
+      "title":"Emails",
+      "type":"list"
+    },
       "total_personas": { "title": "Pax Total", "sumOnSort":"monto", "type":"number" },
       "monto":{"title":"Monto","type":"number" },
       "saldo":{ "title":"Saldo", "type":"number", "editable": false },
@@ -35,7 +39,7 @@
     },
 
   "listColumns":[
-    "paciente_id","estado","observacion","jueves","sabado","domingo","total_personas","monto","saldo"
+    "paciente_id","estado","observacion","emails","jueves","sabado","domingo","total_personas","monto","saldo"
   ],
   "listColumnsActions": [
     { "type": "newModal",
