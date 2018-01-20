@@ -9,7 +9,8 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
-    "syntax-dynamic-import"
+    "syntax-dynamic-import",
+    "add-react-displayname"
     // Enables React code to work with HMR.
   ]
 }
