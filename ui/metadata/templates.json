@@ -1,0 +1,66 @@
+{
+  "groupBy": "es_nuevo",
+  "principalColumn": "templateName",
+  "columns": {
+    "templateName": {
+      "title": "nombre"
+    },
+    "subjectPart": {
+      "title": "subject"
+
+    },
+    "htmlPart": {
+      "title": "machote",
+      "type": "textarea"
+    },
+    "objectType": {
+      "title": "Tipo",
+      "type": "textarea"
+    },
+    "templateDataRoute": {
+      "title": "ruta de datos",
+      "type": "textarea"
+    }
+  },
+  "listColumns": [
+    "templateName",
+    "subjectPart",
+    "htmlPart",
+    "objectType",
+    "templateDataRoute"
+  ],
+  "listColumnsActions": [{
+    "type": "api",
+    "route": "marketing/template/destroy",
+    "icon": "edit_form",
+    "name": "Borrar",
+    "title": "Borrar",
+    "isDelete": true
+  }],
+  "editAction": {
+    "type": "newModal",
+    "route": "marketing/template/getColumnsForTemplateEdit",
+    "name": "editar",
+    "title": "Editar Template",
+    "payloadOptions": {
+      "objectTypes": ["reservacion", "paciente", "contact"]
+    }
+  },
+  "createAction": {
+    "type": "newModal",
+    "route": "marketing/template/getColumnsForTemplateCreate",
+    "payloadOptions": {
+      "objectTypes": ["reservacion", "paciente", "contact"]
+    },
+    "name": "create",
+    "title": "Crear Template"
+  },
+  "views": [{
+    "type": "data",
+    "name": "getTemplates",
+    "icon": "list"
+  }],
+  "route": "marketing/template",
+  "newComponent": "new",
+  "editComponnt": "edit"
+}

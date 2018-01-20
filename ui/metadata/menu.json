@@ -13,7 +13,25 @@
           {
             "title": "Pagos",
             "link": "/table.html?app=pagos"
+          },
+          {
+            "title": "Templates",
+            "link": "/table.html?app=templates"
           }
+
         ]
-        }]
+        },
+        {
+                  "title": "Mercadeo",
+                  "subtitle": "Listas",
+                  "options": [
+                  {
+                    "title": "Templates",
+                    "link": "/table.html?app=templates"
+                  }
+
+                ]
+                }
+
+      ]
       }

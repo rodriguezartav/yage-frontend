@@ -34,7 +34,7 @@ module.exports = {
       rules: [
       {
           test: /\.css$/,
-          exclude: excludeNodeModulesExcept(["ion81"]),
+          exclude: excludeNodeModulesExcept(["ion81","draft-js","react-draft-wysiwyg"]),
           use: [ 'style-loader', 'css-loader' ]
           },
         {
