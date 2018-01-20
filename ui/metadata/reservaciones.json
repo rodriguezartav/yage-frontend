@@ -80,9 +80,9 @@
   }, {
     "type": "newModal",
     "route": "marketing/ui/getColumnsForSendEmail",
-    "payloadOptions": {
-      "objectType": "reservacion"
-    },
+  "payloadOptions": {
+    "objectType": "reservacion"
+  },
     "size": "large",
     "icon": "email",
     "name": "Email",

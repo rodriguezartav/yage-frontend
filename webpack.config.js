@@ -18,48 +18,49 @@ module.exports = {
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/',                          // New
+    publicPath: '/', // New
   },
-
-
   resolve: {
-     extensions: ['.js', '.jsx'],
-      alias: {
-       'react': path.resolve(__dirname, 'node_modules', 'react'),
-       'react-dom': path.resolve(__dirname, 'node_modules', 'react-dom'),
-     }
-   },
+    extensions: ['.js', '.jsx'],
+    alias: {
+      'react': path.resolve(__dirname, 'node_modules', 'react'),
+      'react-dom': path.resolve(__dirname, 'node_modules', 'react-dom'),
+    }
+  },
   devtool: 'source-map',
   module: {
-    rules: [
-    {
+    rules: [{
         test: /\.css$/,
-        exclude: excludeNodeModulesExcept(["ion81"]),
-        loader:  ExtractTextPlugin.extract({
+        exclude: excludeNodeModulesExcept(["ion81", "draft-js", "react-draft-wysiwyg"]),
+        loader: ExtractTextPlugin.extract({
           loader: 'css-loader?importLoaders=1',
         }),
-      },
-      {
+      }, {
         test: /\.js$/,
-        exclude: excludeNodeModulesExcept(["ion81"]),
+        exclude: excludeNodeModulesExcept(["ion81", "draft-js", "react-draft-wysiwyg"]),
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] },
+          options: {
+            presets: ['es2015']
+          },
         }],
-      },
-      {
+      }, {
         test: /\.jsx$/,
-        exclude: excludeNodeModulesExcept(["ion81"]),
+        exclude: excludeNodeModulesExcept(["ion81", "draft-js", "react-draft-wysiwyg"]),
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015','react'] },
+          options: {
+            presets: ['es2015', 'react']
+          },
         }],
       },
 
     ],
   },
-    plugins: [
-    new UglifyJsPlugin({sourceMap:true}),
+  plugins: [
+    new UglifyJsPlugin({
+      sourceMap: true
+    }),
 
     new webpack.DefinePlugin({
       'process.env': {
@@ -69,65 +70,70 @@ module.exports = {
         VERSION: JSON.stringify(npmPackage.dependencies.ion81)
       }
     }),
-    new CleanWebpackPlugin(["dist/*.js","dist/*.css","dist/*.html","dist/*.map","dist/*.gz"], {verbose: true}),
+    new CleanWebpackPlugin(["dist/*.js", "dist/*.css", "dist/*.html", "dist/*.map", "dist/*.gz"], {
+      verbose: true
+    }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 
-      new ExtractTextPlugin({
-        filename: '[name].[hash].css',
-        allChunks: true,
-      }),
+    new ExtractTextPlugin({
+      filename: '[name].[hash].css',
+      allChunks: true,
+    }),
 
     new HtmlWebpackPlugin({
       template: './template.html',
       filename: 'index.html',
-      chunks: ['home','style'],
+      chunks: ['home', 'style'],
       inject: 'body'
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'ui','template.html'),
+      template: path.resolve(__dirname, 'ui', 'template.html'),
       filename: 'table.html',
-      chunks: ['table','style'],
+      chunks: ['table', 'style'],
       inject: 'body'
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'ui','template.html'),
+      template: path.resolve(__dirname, 'ui', 'template.html'),
       filename: 'reservaciones.html',
-      chunks: ['reservaciones','style'],
+      chunks: ['reservaciones', 'style'],
       inject: 'body'
     }),
 
-   new CompressionPlugin({
+    new CompressionPlugin({
       asset: "[path].gz[query]",
       algorithm: "gzip",
       test: /\.(js|html|css)$/,
       threshold: 10240,
       minRatio: 0.8
     }),
-   new CopyWebpackPlugin([
-     { from: '../node_modules/ion81/assets',to: "assets" }
-   ]),
-   new CopyWebpackPlugin([
-    { from: 'public',to: "public" }
-  ])
+    new CopyWebpackPlugin([{
+      from: '../node_modules/ion81/assets',
+      to: "assets"
+    }]),
+    new CopyWebpackPlugin([{
+      from: 'public',
+      to: "public"
+    }])
   ],
 };
 
-function excludeNodeModulesExcept (modules)
-{
-    var pathSep = path.sep;
-    if (pathSep == '\\') // must be quoted for use in a regexp:
-        pathSep = '\\\\';
-    var moduleRegExps = modules.map (function (modName) { return new RegExp("node_modules" + pathSep + modName)})
+function excludeNodeModulesExcept(modules) {
+  var pathSep = path.sep;
+  if (pathSep == '\\') // must be quoted for use in a regexp:
+    pathSep = '\\\\';
+  var moduleRegExps = modules.map(function(modName) {
+    return new RegExp("node_modules" + pathSep + modName)
+  })
 
-    return function (modulePath) {
-      console.log(modulePath)
-        if (/node_modules/.test(modulePath)) {
-            for (var i = 0; i < moduleRegExps.length; i ++)
-                if (moduleRegExps[i].test(modulePath)) return false;
-            return true;
-        }
-        return false;
-    };
+  return function(modulePath) {
+    console.log(modulePath)
+    if (/node_modules/.test(modulePath)) {
+      for (var i = 0; i < moduleRegExps.length; i++)
+        if (moduleRegExps[i].test(modulePath)) return false;
+      return true;
+    }
+    return false;
+  };
 }
