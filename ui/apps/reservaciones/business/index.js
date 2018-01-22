@@ -1,10 +1,10 @@
-var Ajax = require("ion81/helpers/ajax");
+var Ajax = require("@rodco/ion81/helpers/ajax");
 var Data = require("./data");
 
-function Business(app){
+function Business(app) {
   var _this = this;
   this.app = app;
-  this.app.state={
+  this.app.state = {
     periodo: "2018-1",
     view: "home",
     personas: 0,
@@ -16,10 +16,10 @@ function Business(app){
     celular: null,
     error: null,
     saving: false,
-    stats:{
-      jueves:0,
+    stats: {
+      jueves: 0,
       sabado: 0,
-      domingo:0
+      domingo: 0
     }
   };
   Business.this = this;

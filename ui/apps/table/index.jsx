@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'ion81/apps/metaDataTable/app';
+import App from '@rodco/ion81/apps/metaDataTable/app';
 import { AppContainer } from 'react-hot-loader';
 import Metadata from '../../metadata';
 import Menu from "../../metadata/menu.json";
@@ -23,7 +23,7 @@ const render = (Component) => {
 render(App);
 
 if (module.hot){
-  module.hot.accept('ion81/apps/metaDataTable/app', () => {
+  module.hot.accept('@rodco/ion81/apps/metaDataTable/app', () => {
     render(App);
   })
 }

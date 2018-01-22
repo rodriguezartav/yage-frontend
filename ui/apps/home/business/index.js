@@ -1,13 +1,16 @@
-import {Ajax,Auth} from "ion81/helpers";
+import {
+  Ajax,
+  Auth
+} from "@rodco/ion81/helpers";
 import createHistory from 'history/createHashHistory';
 
 const history = createHistory();
 
-function Business(app){
+function Business(app) {
   var _this = this;
   this.app = app;
 
-  this.app.state={
+  this.app.state = {
     view: "home"
   };
   Business.business = Business.instance = this;
@@ -17,16 +20,16 @@ function Business(app){
 
 
 
-Ajax.onUnauthorized = function(){
+Ajax.onUnauthorized = function() {
   alert("Parece que ha pasado mucho tiempo desde su ingreso, debemos volver a cargar la pagina.")
   window.location.reload();
 }
 
-Ajax.onNoACL = function(){
+Ajax.onNoACL = function() {
   alert("No tiene los accessos necesarios para usar este app. Comuniquese con it@rodcocr.com")
 }
 
-Ajax.onLogon = function(){
+Ajax.onLogon = function() {
   alert("No tenemos registado su acceso, lo llevaremos al porton de entrada.")
 }
 

@@ -31,13 +31,13 @@ module.exports = {
   module: {
     rules: [{
         test: /\.css$/,
-        exclude: excludeNodeModulesExcept(["ion81", "draft-js", "react-draft-wysiwyg"]),
+        exclude: excludeNodeModulesExcept(["@rodco/ion81", "draft-js", "react-draft-wysiwyg"]),
         loader: ExtractTextPlugin.extract({
           loader: 'css-loader?importLoaders=1',
         }),
       }, {
         test: /\.js$/,
-        exclude: excludeNodeModulesExcept(["ion81", "draft-js", "react-draft-wysiwyg"]),
+        exclude: excludeNodeModulesExcept(["@rodco/ion81", "draft-js", "react-draft-wysiwyg"]),
         use: [{
           loader: 'babel-loader',
           options: {
@@ -46,7 +46,7 @@ module.exports = {
         }],
       }, {
         test: /\.jsx$/,
-        exclude: excludeNodeModulesExcept(["ion81", "draft-js", "react-draft-wysiwyg"]),
+        exclude: excludeNodeModulesExcept(["@rodco/ion81", "draft-js", "react-draft-wysiwyg"]),
         use: [{
           loader: 'babel-loader',
           options: {
@@ -67,7 +67,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         API_URL: process.env.NODE_ENV == "staging" ? JSON.stringify("https://apistaging.ceremoniacusingas.org") : JSON.stringify("https://api.ceremoniacusingas.org"),
         DOMAIN: process.env.NODE_ENV == "staging" ? JSON.stringify("staging.ceremoniacusingas.org") : JSON.stringify("ceremoniacusingas.org"),
-        VERSION: JSON.stringify(npmPackage.dependencies.ion81)
+        VERSION: JSON.stringify(npmPackage.dependencies["@rodco/ion81"])
       }
     }),
     new CleanWebpackPlugin(["dist/*.js", "dist/*.css", "dist/*.html", "dist/*.map", "dist/*.gz"], {
@@ -109,7 +109,7 @@ module.exports = {
       minRatio: 0.8
     }),
     new CopyWebpackPlugin([{
-      from: '../node_modules/ion81/assets',
+      from: '../node_modules/@rodco/ion81/assets',
       to: "assets"
     }]),
     new CopyWebpackPlugin([{
