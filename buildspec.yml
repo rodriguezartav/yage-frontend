@@ -2,7 +2,6 @@ version: 0.1
 phases:
   install:
     commands:
-      - echo Installing Mocha...
       - npm install .
       - npm install webpack@^3.0.0 -g
   build:

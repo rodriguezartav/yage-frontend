@@ -1,37 +1,25 @@
 {
-        "items": [{
-          "title": "Administracion",
-          "subtitle": "Listas",
-          "options": [{
-            "title": "Pacientes",
-            "link": "/table.html?app=pacientes"
-          },
-          {
-            "title": "Reservaciones",
-            "link": "/table.html?app=reservaciones"
-          },
-          {
-            "title": "Pagos",
-            "link": "/table.html?app=pagos"
-          },
-          {
-            "title": "Templates",
-            "link": "/table.html?app=templates"
-          }
-
-        ]
-        },
-        {
-                  "title": "Mercadeo",
-                  "subtitle": "Listas",
-                  "options": [
-                  {
-                    "title": "Templates",
-                    "link": "/table.html?app=templates"
-                  }
-
-                ]
-                }
-
-      ]
+  "items": [{
+    "title": "Ceremonia",
+    "subtitle": "Listas",
+    "options": [{
+      "title": "Pacientes",
+      "link": "/table.html?app=pacientes"
+    }, {
+      "title": "Reservaciones",
+      "link": "/table.html?app=reservaciones"
+    }, {
+      "title": "Pagos",
+      "link": "/table.html?app=pagos"
+    }]
+  }, {
+    "title": "Mercadeo",
+    "subtitle": "Listas",
+    "options": [{
+        "title": "Templates",
+        "link": "/table.html?app=templates"
       }
+
+    ]
+  }]
+}
