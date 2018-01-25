@@ -1,7 +1,8 @@
 import {
   Ajax,
   Auth
-} from "@rodco/ion81/helpers";
+} from "../../../../ion/helpers";
+
 import createHistory from 'history/createHashHistory';
 
 const history = createHistory();
