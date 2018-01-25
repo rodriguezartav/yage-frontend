@@ -41,7 +41,7 @@
     "saldo": {
       "title": "Saldo",
       "type": "number",
-      "editable": false
+      "editable": true
     },
     "jueves": {
       "title": "Pax Jueves",
@@ -59,11 +59,16 @@
       "title": "Observación",
       "type": "string",
       "editable": true
+    },
+    "observacion": {
+      "title": "Sin Hotel",
+      "type": "boolean",
+      "editable": true
     }
   },
 
   "listColumns": [
-    "paciente_id", "estado", "observacion", "emails", "jueves", "sabado", "domingo", "total_personas", "monto", "saldo"
+    "paciente_id", "estado", "observacion", "sin_hotel", "jueves", "sabado", "domingo", "total_personas", "monto", "saldo"
   ],
   "listColumnsActions": [{
     "type": "newModal",
@@ -80,9 +85,9 @@
   }, {
     "type": "newModal",
     "route": "marketing/ui/getColumnsForSendEmail",
-  "payloadOptions": {
-    "objectType": "reservacion"
-  },
+    "payloadOptions": {
+      "objectType": "reservacion"
+    },
     "size": "large",
     "icon": "email",
     "name": "Email",
