@@ -1,0 +1,241 @@
+.smart-table{
+  overflow: scroll;
+}
+
+.smart-table-group_name{
+  background-color: rgb(229, 46, 77);
+  color: #fff;
+}
+
+.principal-container{
+  width: 263px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.principal-container .header-cell{
+  width: 230px;
+}
+
+.principal-container .principal-container-wrapper{
+  width: 263px;
+  z-index: 100;
+  position: fixed;
+  border-right: 1px solid #ccc;
+}
+
+.principal-container .principal-container-wrapper th{
+  padding-right: 0px !important;
+}
+
+.principal-container .table-wrapper{
+  margin-left: 15px;
+      border-left: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      border-radius: 10px 0px;
+      margin-bottom: 20px;
+
+}
+
+.content-container{
+  margin-left: 263px;
+}
+
+.content-container > div{
+}
+
+.content-container .content-container-wrapper{
+  position: fixed;
+  z-index: 88;
+}
+
+.content-container .content-container-wrapper.content-container-wrapper-full{
+  right: 1px;
+  background-color: #fefefe;
+  left: 263px;
+  position: fixed;
+  padding: 0px;
+
+}
+
+.content-container .table-wrapper{
+  border-top: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.content-container .table-wrapper table{
+  width: auto;
+  max-width: 100%;
+}
+
+.header-cell{
+  width: 200px;
+  text-transform: capitalize;
+}
+
+.header-cell.header-cell-style_radio{
+  width: 120px;
+}
+
+.header-cell.header-cell-style_boolean{
+  width: 110px;
+}
+
+.header-cell.header-cell-style_textarea{
+  width: 400px;
+}
+
+.header-cell.header-cell-style_list{
+  width: 300px;
+}
+
+.header-cell.header-cell-style_multilookup{
+  width: 300px;
+}
+
+.header-cell_in-search-mode___th{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.header-cell_in-search-mode input{
+  outline: none;
+}
+
+
+.content-cell{
+  background-color: #fff;
+  width: 200px;
+  padding-bottom: 0px !important;
+  overflow-y: hidden;
+  height: 26px;
+  padding-top: 1px !important;
+}
+
+.content-cell > div{
+  width: 200px;
+}
+
+
+.content-cell_header .slds-popover{
+  left: 85%;
+  position: absolute;
+  top: 20px;
+
+}
+
+.content-cell_header .content-cell-click-button{
+  position: absolute;
+  right: 17px;
+  top: 8px;
+}
+
+.content-cell_header.active .slds-popover{
+  display: block;
+}
+
+.content-cell-hoover-button{
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  padding: 3px;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+}
+
+.content-cell_header .content-cell-hoover-button{
+  left: -10px;
+}
+
+.content-cell:hover .content-cell-hoover-button{
+  display: block;
+}
+
+.content-cell.content-cell-style_radio{
+  text-transform: capitalize;
+  line-height: 1.35;
+  width: 120px;
+}
+
+.content-cell.content-cell-style_textarea> div{
+  width: 400px;
+}
+
+.content-cell.content-cell-style_list> div{
+  width: 300px;
+}
+
+.content-cell.content-cell-style_list > div > span{
+  font-size: 10px;
+  padding: 3px;
+  background-color: #ddd;
+  color: #000;
+  border-radius: 50px;
+}
+
+.content-cell.content-cell-style_multilookup> div{
+  width: 300px;
+}
+
+.content-cell.content-cell-style_multilookup > div > span{
+  font-size: 10px;
+  padding: 3px;
+  background-color: #ddd;
+  color: #000;
+  border-radius: 50px;
+}
+
+.content-cell.content-cell-style_lookup> div{
+  width: 200px;
+}
+
+.content-cell.content-cell-style_lookup > div > span{
+  font-size: 10px;
+  padding: 3px;
+  background-color: #ddd;
+  color: #000;
+  border-radius: 50px;
+}
+
+.content-cell.content-cell-style_boolean > div{
+  width: 120px;
+  text-align: center;
+}
+
+.content-cell.content-cell-style_undefined > div{
+ width: 200px;
+}
+
+.content-cell.content-cell-style_radio > div{
+  width: 120px;
+}
+
+.content-cell.content-cell-style_radio .type_0{
+  color: rgb(229, 46, 77);
+  text-transform: capitalize;
+}
+
+.content-cell.content-cell-style_radio .type_1{
+  color: #333;
+  text-transform: capitalize;
+}
+
+.content-cell.content-cell-style_radio .type_2{
+  color: blue;
+  text-transform: capitalize;
+}
+
+.content-cell.content-cell-style_radio .type_3{
+  color: green;
+  text-transform: capitalize;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.slds-text-title_caps{
+  text-transform: capitalize;
+}

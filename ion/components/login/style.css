@@ -1,0 +1,12 @@
+.slds-modal{
+  background-color: rgba(33,33,33,0.7);
+}
+
+.slds-modal__container{
+  justify-content: baseline;
+}
+
+.slds-modal__content{
+  background: linear-gradient(to bottom, #B9E1F3, #FEFEFE);
+}
+

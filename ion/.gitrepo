@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:Rodco/ion.git
+	branch = master
+	commit = e1d02185f35a8d18d778697a0af7ff7ad234735f
+	parent = 7d294eab9c98e3ffec53bbd30f1a48350719ce87
+	cmdver = 0.3.1

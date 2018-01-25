@@ -1,0 +1,80 @@
+.slds-global-header__logo a{
+	color: #00a1df;
+}
+
+.global-header-gray-button{
+ 	background-color: #9D9D9B;
+}
+
+.global-header-gray-links{
+	background-color: #9D9D9B;
+}
+
+.global-header-gray-clear{
+	background-color: #9D9D9B;
+}
+
+.global-header-blue-button{
+ 	background-image: radial-gradient(circle farthest-corner at 0% 50%,#1F3B84,#36A9E1);
+}
+
+.global-header-blue-links{
+ 	background-image: radial-gradient(circle farthest-corner at 0% 50%,#1F3B84,#36A9E1);
+}
+
+.global-header-blue-clear{
+ 	background-image: radial-gradient(circle farthest-corner at 0% 50%,#1F3B84,#36A9E1);
+}
+
+.text_link{
+	font-size:15px;
+	font-family: brandon-regular;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.text_link:hover{
+	text-decoration: underline;
+	cursor: hand;
+	color: black;
+}
+
+
+.text_link:active{
+	color: black;
+}
+
+.slds-context-bar__primary{
+	overflow: hidden;
+}
+
+.rotate{
+	animation: rotateLogo 2s ease infinite;
+	stroke: blue;
+}
+
+.done{
+	animation: done 1s ease 2;
+}
+
+.error{
+	animation: error 1s ease 5;
+}
+
+@keyframes rotateLogo {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes done {
+  0% { opacity: 0; }
+  100% { opacity: 1 }
+}
+
+@keyframes error {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+  75% { opacity: 1 }
+}
