@@ -1,5 +1,5 @@
-import React from 'react'
 import "../../polyfill/dataset";
+import React from 'react'
 import Toast from "../../components/toast";
 import GlobalHeader from "../../components/globalHeader";
 import PageHeader from "../../components/pageHeader";
@@ -7,7 +7,6 @@ import ButtonBar from "../../components/buttonBar";
 import Picklist from "../../components/picklist";
 import NewModal from "../../components/newModal";
 import NewModalPage from "../../components/newModal/page";
-
 import Business from "./business"
 import Style from './style.css';
 import UI from "./ui";
@@ -15,13 +14,9 @@ import DefaultForm from "./defaultForm";
 import createHistory from 'history/createHashHistory';
 import Grid from "./components/grid";
 import Columns from "./business/columns";
-
-
 import GroupPlaceHolder from "./components/groupPlaceholder";
 import Ops from "./business/ops";
-
 const history = createHistory()
-
 
 class App extends React.Component {
 

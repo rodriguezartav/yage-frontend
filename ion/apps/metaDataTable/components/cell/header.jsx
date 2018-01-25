@@ -3,7 +3,6 @@ import moment from "moment";
 import UI from "../../ui";
 import IconButton from "../../../../components/iconButton";
 
-
 class HeaderCell extends React.PureComponent {
 
   constructor(props) {
@@ -19,6 +18,14 @@ class HeaderCell extends React.PureComponent {
   onFilter(){
     var text = this.refs.txt_filter.value;
     UI.onFilter(this.props.column, text);
+  }
+
+  onSum(){
+    var _this = this;
+
+    this.setState({isSum: true, sum: _this.props.column.total });
+    setTimeout(function(){ _this.setState({isSum: false, sum: 0 }); },2000)
+
   }
 
   toggleSearch(){
@@ -40,22 +47,35 @@ class HeaderCell extends React.PureComponent {
         ref="txt_filter"
         className="slds-input"
         style={{ minHeight:"auto",lineHeight: 0, padding: 0, paddingLeft: 3, width: "95%",position: "absolute", left:3, top: 1, bottom: 1 }}/>
+
+    if(this.state.isSum) return <div className="header-cell-label">{this.state.sum}</div>
+
     return <div className="header-cell-label">{this.props.column.title}</div>
   }
 
   renderIcons(){
 
-    if( this.state.isSearching ) return <button onClick={this.onDelete.bind(this)} className="slds-m-left_xx-small slds-button slds-float_right slds-button_icon" title="Buscar">
+    var searchOrSum;
+    if( this.props.column.type == "number" || this.props.column.type == "integer" ) searchOrSum =  <button onClick={this.onSum.bind(this)} data-col={this.props.column.title}  className="slds-m-left_xx-small slds-button  slds-button_icon" title="Buscar">
+      <svg className="slds-button__icon" aria-hidden="true">
+        <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#magicwand"></use>
+      </svg>
+    </button>
+    else searchOrSum = <button onClick={this.toggleSearch.bind(this)} data-col={this.props.column.title}  className="slds-m-left_xx-small slds-button  slds-button_icon" title="Buscar">
+      <svg className="slds-button__icon" aria-hidden="true">
+        <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+      </svg>
+    </button>
+
+    if(this.state.isSearching) return <button onClick={this.onDelete.bind(this)} className="slds-m-left_xx-small slds-button slds-float_right slds-button_icon" title="Buscar">
       <svg className="slds-button__icon" aria-hidden="true">
         <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
       </svg>
     </button>
 
-    return <div className="slds-float_right"><button onClick={this.toggleSearch.bind(this)} data-col={this.props.column.title}  className="slds-m-left_xx-small slds-button  slds-button_icon" title="Buscar">
-      <svg className="slds-button__icon" aria-hidden="true">
-        <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
-      </svg>
-    </button>
+    return <div className="slds-float_right">
+
+    {searchOrSum}
 
     <button onClick={this.onSort.bind(this)} data-col={this.props.column.name}  className="slds-button slds-button_icon" title="Ordenar">
       <svg className="slds-button__icon" aria-hidden="true">

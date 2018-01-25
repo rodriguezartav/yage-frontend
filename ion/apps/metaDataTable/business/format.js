@@ -1,17 +1,18 @@
 import moment from "moment";
 import Columns from "./columns";
 import numeral from "numeral";
-function Format(){
+
+function Format() {
 
 }
 
-Format.init = function(item, column){
+Format.init = function(item, column) {
   var value = item[column.name];
-  if( column.name == "id" ) return item.id;
-  if(value == null) value = "";
+  if (column.name == "id") return item.id;
+  if (value == null) value = "";
 
   var formatFunction = Format[column.type];
-  if( formatFunction ) return formatFunction(value, column,item);
+  if (formatFunction) return formatFunction(value, column, item);
 
   var formatValue = "" + value.toString();
   return {
@@ -22,8 +23,13 @@ Format.init = function(item, column){
   }
 }
 
-Format.onetoone = function(value,column,row){
-  if(!value || value == "") return { originalValue: "", formatValue: "", objectClass: {}, contentWidth:0 };
+Format.onetoone = function(value, column, row) {
+  if (!value || value == "") return {
+    originalValue: "",
+    formatValue: "",
+    objectClass: {},
+    contentWidth: 0
+  };
 
   var objectClass = {}
   var formatValue = value[column.field];
@@ -36,10 +42,13 @@ Format.onetoone = function(value,column,row){
   }
 }
 
-Format.number = function(value,column,row){
+Format.number = function(value, column, row) {
+  if (!column.total) column.total = 0;
   value = parseFloat(value);
   var objectClass = numeral(value);
   var formatValue = objectClass.format('0.0a');
+
+  column.total += value;
   return {
     originalValue: value,
     formatValue: formatValue,
@@ -50,10 +59,12 @@ Format.number = function(value,column,row){
   }
 }
 
-Format.integer = function(value,column,row){
+Format.integer = function(value, column, row) {
+  if (!column.total) column.total = 0;
   value = parseInt(value);
   var objectClass = numeral(value);
   var formatValue = objectClass.format('0');
+  column.total += value;
   return {
     originalValue: value,
     formatValue: value,
@@ -64,68 +75,75 @@ Format.integer = function(value,column,row){
   }
 }
 
-Format.relation = function(value, column, row){
+Format.relation = function(value, column, row) {
   var formatValue = ""
-  if( value > 1 ){
+  if (value > 1) {
     formatValue = row[column.titleField];
   }
 
   return {
-      originalValue: value,
-      formatValue: formatValue,
-      objectClass: { getId: function(){ return value }, getTitle: function(){return formatValue;} },
-      contentWidth: Columns.getTextWidth(formatValue)
+    originalValue: value,
+    formatValue: formatValue,
+    objectClass: {
+      getId: function() {
+        return value
+      },
+      getTitle: function() {
+        return formatValue;
+      }
+    },
+    contentWidth: Columns.getTextWidth(formatValue)
   }
 }
 
-Format.timestamp = function(value, column){
+Format.timestamp = function(value, column) {
   var momentValue = moment(value);
 
   var formatValue = momentValue.fromNow();
   return {
-      originalValue: value,
-      formatValue: formatValue,
-      objectClass: momentValue,
-      contentWidth: Columns.getTextWidth(formatValue)
-    }
+    originalValue: value,
+    formatValue: formatValue,
+    objectClass: momentValue,
+    contentWidth: Columns.getTextWidth(formatValue)
+  }
 }
 
-Format.date = function(value, column){
+Format.date = function(value, column) {
   var momentValue = moment(value);
   var formatValue;
   var format = column.format || "DD MMM YY";
-  if(format == "toNow") formatValue = momentValue.fromNow();
+  if (format == "toNow") formatValue = momentValue.fromNow();
   else formatValue = momentValue.format("DD MMM YY");
 
   return {
-      originalValue: value,
-      formatValue: formatValue,
-      objectClass: momentValue,
-      contentWidth: Columns.getTextWidth(formatValue)
-    }
+    originalValue: value,
+    formatValue: formatValue,
+    objectClass: momentValue,
+    contentWidth: Columns.getTextWidth(formatValue)
+  }
 }
 
-Format.boolean = function(value, column){
+Format.boolean = function(value, column) {
   var formatValue;
-  if(value.toLowerCase) value = value.toLowerCase();
-  if( value == true || value == "true") formatValue = "Si";
-  if( value == false || value == "false") formatValue = "No";
+  if (value.toLowerCase) value = value.toLowerCase();
+  if (value == true || value == "true") formatValue = "Si";
+  if (value == false || value == "false") formatValue = "No";
 
   return {
-      originalValue: value,
-      formatValue: formatValue,
-      objectClass: {
-        isTrue: function(){
-          if( value == true || value == "true") return true;
-          if( value == false || value == "false") return false;
-          return false;
-        }
-      },
-      contentWidth: 10
-    }
+    originalValue: value,
+    formatValue: formatValue,
+    objectClass: {
+      isTrue: function() {
+        if (value == true || value == "true") return true;
+        if (value == false || value == "false") return false;
+        return false;
+      }
+    },
+    contentWidth: 10
+  }
 }
 
-Format.select = function(value, column){
+Format.select = function(value, column) {
   var formatValue = value;
   return {
     originalValue: value,
@@ -135,14 +153,14 @@ Format.select = function(value, column){
   }
 }
 
-Format.list = function(value, column){
+Format.list = function(value, column) {
   var separator = column.separator || ","
   var items;
 
-  if( Array.isArray(value) ) items = value;
-  else  items = value.split(separator);
+  if (Array.isArray(value)) items = value;
+  else items = value.split(separator);
 
-  if(items.length ==1 && items[0] == "") items=[];
+  if (items.length == 1 && items[0] == "") items = [];
   var formatValue = items.join(" ");
 
   return {
@@ -153,11 +171,11 @@ Format.list = function(value, column){
   }
 }
 
-Format.arrayList = function(value, column){
-  var formatValue="";
+Format.arrayList = function(value, column) {
+  var formatValue = "";
   var array = value;
-  if( column.key ) array = array[key];
-  if(!array) array = [];
+  if (column.key) array = array[key];
+  if (!array) array = [];
 
 
   return {
@@ -168,11 +186,11 @@ Format.arrayList = function(value, column){
   }
 }
 
-Format.jsonbPhoto = function(value, column){
-  var formatValue="";
+Format.jsonbPhoto = function(value, column) {
+  var formatValue = "";
   var array = value;
-  if( column.key ) array = array[column.key]; // for JSONB
-  if(!array) array = [];
+  if (column.key) array = array[column.key]; // for JSONB
+  if (!array) array = [];
 
 
   return {
