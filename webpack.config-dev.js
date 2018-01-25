@@ -64,7 +64,7 @@ module.exports = {
         NODE_ENV: JSON.stringify("development"),
         API_URL: process.env.MOCK ? JSON.stringify("http://localhost:3001") : JSON.stringify("http://localhost:3000"),
         DOMAIN: JSON.stringify("ceremoniacusingas.org"),
-        VERSION: JSON.stringify(npmPackage.dependencies["@rodco/ion81"])
+        VERSION: JSON.stringify("1.0")
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
@@ -93,7 +93,7 @@ module.exports = {
       inject: 'body'
     }),
     new CopyWebpackPlugin([{
-      from: '../node_modules/@rodco/ion81/assets',
+      from: '../ion/assets',
       to: "assets"
     }]),
     new CopyWebpackPlugin([{
