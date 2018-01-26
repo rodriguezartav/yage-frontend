@@ -203,7 +203,7 @@ class App extends React.Component {
   }
 
   renderToolBox(){
-    if(this.state.content !=null ) return null;
+    if(this.state.content !=null && this.state.contents.length>0) return null;
     return <div className="tool-box slds-grid">
       {this.renderOptions()}
       {this.renderViews()}
