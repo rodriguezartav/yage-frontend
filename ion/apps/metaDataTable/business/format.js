@@ -6,13 +6,13 @@ function Format() {
 
 }
 
-Format.init = function(item, column) {
+Format.init = function(item, column, index) {
   var value = item[column.name];
   if (column.name == "id") return item.id;
   if (value == null) value = "";
 
   var formatFunction = Format[column.type];
-  if (formatFunction) return formatFunction(value, column, item);
+  if (formatFunction) return formatFunction(value, column, item, index);
 
   var formatValue = "" + value.toString();
   return {
@@ -42,8 +42,9 @@ Format.onetoone = function(value, column, row) {
   }
 }
 
-Format.number = function(value, column, row) {
+Format.number = function(value, column, row, index) {
   if (!column.total) column.total = 0;
+  if (index == 0) column.total = 0;
   value = parseFloat(value);
   var objectClass = numeral(value);
   var formatValue = objectClass.format('0.0a');
@@ -59,8 +60,10 @@ Format.number = function(value, column, row) {
   }
 }
 
-Format.integer = function(value, column, row) {
+Format.integer = function(value, column, row, index) {
   if (!column.total) column.total = 0;
+  if (index == 0) column.total = 0;
+
   value = parseInt(value);
   var objectClass = numeral(value);
   var formatValue = objectClass.format('0');

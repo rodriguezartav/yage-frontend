@@ -102,7 +102,7 @@ Contents.update = function() {
   var state = app.state;
   var all = Contents.all();
   var enrichedData = [];
-  all.forEach(function(item) {
+  all.forEach(function(item, index) {
     var newData = {
       id: item.id
     }
@@ -110,7 +110,7 @@ Contents.update = function() {
       if (column.type == "concat") newData[column.name] = Dynamic.concat(item, column)
     })
     Columns.getAsArray().forEach(function(column) {
-      if (!newData[column.name]) newData[column.name] = Format.init(item, column);
+      if (!newData[column.name]) newData[column.name] = Format.init(item, column, index);
     })
     enrichedData.push(newData);
   })
