@@ -48,13 +48,19 @@ module.exports = function(Business) {
     }
     Ajax.post("/public/reservacion/book", body)
       .then(function(response) {
+        if (response.httpError) throw new Error("Error")
+        else if (response.serverError) throw new Error("Error")
+        else if (response.apiError) throw new Error(response.message)
+        else if (response.accessError) throw new Error("Error")
+
         _this.app.setState({
           view: "complete",
           saving: false
         });
       })
       .catch(function(e) {
-        var message = "Ocurrio un error de conexion, favor intente de nuevo o contacte a roberto@3vot.com";
+        console.log(e)
+        var message = e.message || "Ocurrio un error de conexion, favor intente de nuevo o contacte a roberto@3vot.com";
         _this.app.setState({
           saving: false,
           error: e.message || message
