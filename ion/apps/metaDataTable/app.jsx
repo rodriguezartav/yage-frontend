@@ -67,6 +67,10 @@ class App extends React.Component {
     UI.onChangeView(option);
   }
 
+  onRefresh(){
+    UI.refresh();
+  }
+
   renderViews(){
     var _this = this;
 
@@ -93,6 +97,13 @@ class App extends React.Component {
     options.push( <button key={"new_btn"} onClick={UI.onNew} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled" aria-pressed="true" title="Charts">
       <svg className="slds-button__icon" aria-hidden="true">
         <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#new" />
+      </svg>
+      </button>
+    )
+
+    options.push( <button key={"refresg_btn"} onClick={UI.onRefresh} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled" aria-pressed="true" title="Charts">
+      <svg className="slds-button__icon" aria-hidden="true">
+        <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#sync" />
       </svg>
       </button>
     )

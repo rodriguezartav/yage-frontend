@@ -136,6 +136,10 @@ UI.onNew = function() {
   });
 }
 
+UI.onRefresh = function() {
+  Business.instance.load(Business.instance.app.state.dataView);
+}
+
 UI.onRowClick = function(id) {
   var content = Contents.one(id);
   var action = Business.instance.app.props.editAction;
