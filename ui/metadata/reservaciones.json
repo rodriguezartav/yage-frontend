@@ -60,7 +60,7 @@
       "type": "string",
       "editable": true
     },
-    "observacion": {
+    "sin_hotel": {
       "title": "Sin Hotel",
       "type": "boolean",
       "editable": true
