@@ -5,6 +5,7 @@
 
 .grid{
   background-color: #fff;
+  background-color: rgba(200,200,200,0.1);
 }
 
 .header{
@@ -12,12 +13,13 @@
 }
 
 .header-cell{
-
+  background-color: rgba(150,150,150,0.4);
 }
 
 .header-cell-style{
   border: 1px solid #ddd;
   padding: 5px 8px;
+  padding-bottom: 4px;
   position: relative;
 }
 
@@ -40,7 +42,7 @@
 
 
 .content-viewport{
-  background-color: #fff;
+
 }
 
 .content{
@@ -48,7 +50,7 @@
 }
 
 .static-content{
-  border-right: 1px solid #ddd;
+
 }
 
 .dynamic-content{
@@ -56,33 +58,47 @@
 }
 
 .row{
-  background-color: #fff;
+
 }
 
+
+.group-cell {
+
+}
+
+.group-cell-header{
+  padding-left: 10px;
+  border-top: 1px solid rgba(100,100,100,0.2);
+  background-color: rgba(100,100,100,0.1);
+}
+
+.group-cell-static-header{
+  padding-left: 10px;
+  margin-left: 10px;
+  color: #333;
+  padding-top: 4px;
+  border-left: 1px solid rgba(100,100,100,0.2);
+  border-radius: 10px 0px 0px 0px;
+  border-top: 1px solid rgba(100,100,100,0.2);
+  background-color: rgba(100,100,100,0.1);
+  text-transform: capitalize;
+}
 
 .content-cell{
   border: 1px solid #ddd;
   padding: 3px 5px;
   font-size: 11px;
   height: 100%;
+  background-color: rgba(255,255,255,0.9);
 }
 
 .static-content .content-cell{
-  border-left: 3px solid rgba(100,100,100,0.6);
+  border-left: 1px solid rgba(100,100,100,0.6);
+  margin-left: 10px;
+  padding-left: 30px;
+
 }
 
-
-
-.static-content .content-cell.color0{ border-left-color: black;  }
-.static-content .content-cell.color1{ border-left-color: #26336d;  }
-.static-content .content-cell.color2{ border-left-color: #36a9e1;  }
-.static-content .content-cell.color3{ border-left-color: #e30613;  }
-.static-content .content-cell.color4{ border-left-color: #bbe834;  }
-.static-content .content-cell.color5{ border-left-color: #36a9e1;  }
-.static-content .content-cell.color6{ border-left-color: red;  }
-.static-content .content-cell.color7{ border-left-color: blue;  }
-.static-content .content-cell.color8{ border-left-color: green;  }
-.static-content .content-cell.color9{ border-left-color: yellow;  }
 
 .slds-badge_small{
   font-size: 8px;
@@ -93,7 +109,7 @@
 
 .slds-badge.color0{background-color: black;color:#fff;}
 .slds-badge.color1{background-color: #26336d;color:#fff;}
-.slds-badge.color2{background-color: #36a9e1;color: #fff;}
+.slds-badge{background-color: #36a9e1;color: #fff;}
 .slds-badge.color3{background-color: #e30613;color:#fff;}
 .slds-badge.color4{background-color: #bbe834;color:#fff;}
 .slds-badge.color5{background-color: #26336d;opacity: 0.8;color: #fff;}

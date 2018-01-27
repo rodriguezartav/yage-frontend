@@ -92,8 +92,7 @@ Columns.getColumnWidths = function(rows, columns) {
   rows.forEach(function(row) {
     columns.forEach(function(column) {
       var col = column.name;
-      var colValue = row[col];
-
+      var colValue = row[col] || "";
 
       var labelCount = column.labelWidth + 70;
       var contentCount = colValue.contentWidth;
@@ -104,7 +103,11 @@ Columns.getColumnWidths = function(rows, columns) {
 
       if (column.maxWidth && contentCount > column.maxWidth) contentCount = column.maxWidth;
 
-      if (col == props.principalColumn) contentCount += 50;
+      if (col == props.principalColumn) {
+        contentCount += 50;
+        if (contentCount < 200) contentCount = 200;
+      }
+
       if (contentCount > columnWidths[col]) columnWidths[col] = contentCount;
     })
   })

@@ -1,18 +1,16 @@
-import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../../../ion/apps/groupedTable/app';
+import App from 'ion/apps/metaDataTable/app';
 import { AppContainer } from 'react-hot-loader';
 import Metadata from '../../metadata';
-import Menu from "../../metadata/menu.json";
+
 
 const render = (Component) => {
-  var App = Metadata(getParameterByName("app")||"reservaciones");
-  if(!App) return document.getElementById('root').innerHTML("App Not Found");
+  var App = Metadata(getParameterByName("app")||"pacientes");
 
   ReactDOM.render(
     <AppContainer>
-      <Component ionName="Yage" menu={Menu} {...App} />
+      <Component {...App} />
     </AppContainer>
 
    , document.getElementById('root')
@@ -23,7 +21,7 @@ const render = (Component) => {
 render(App);
 
 if (module.hot){
-  module.hot.accept('../../../ion/apps/groupedTable/app', () => {
+  module.hot.accept('./app', () => {
     render(App);
   })
 }

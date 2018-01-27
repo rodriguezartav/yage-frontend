@@ -135,22 +135,6 @@ class App extends React.Component {
     else return <Toast onExpire={UI.toastExpired} notifications={this.state.notifications} />
   }
 
-  renderModal(){
-    if(!this.state.modalAction) return null;
-    return <NewModal
-      title={this.state.modalAction.title}
-      route={this.state.modalAction.route}
-      size={this.state.modalAction.size || ""}
-      onSave={UI.onSaveNewModal}
-      onClose={UI.onHideNewModal}
-      viewHeight={this.state.viewportHeight}
-      payload={this.state.modalAction.payload}
-      onFieldUpdate={this.business.onFieldUpdate}
-      onLoadColumns={this.business.loadColumns}
-      onSaveAction={this.business.rowAction}
-    />
-  }
-
   renderList(){
     var _this =this;
     var columns = this.state.listColumns;
@@ -159,16 +143,10 @@ class App extends React.Component {
     var groupFields = Columns.getDistintFields(rows, this.state.groupBy);
     var groupFieldDiversity = (groupFields.unique.length/ rows.length)*100;
     if( !groupFieldDiversity || groupFieldDiversity > 0 == false ) groupFieldDiversity=0;
-    var width = this.state.viewportWidth - ( groupFieldDiversity < Ops.diversityThesrshold ? 100 : 0 );
+    var width = this.state.viewportWidth;
     if(width == NaN || width > 0 == false) width = 0;
 
     return <div className="slds-grid">
-
-      <GroupPlaceHolder
-        height={this.state.viewportHeight}
-        groupFields={groupFields}
-        groupFieldDiversity={groupFieldDiversity}
-      />
 
       <div>
 
@@ -188,6 +166,22 @@ class App extends React.Component {
       />
       </div>
     </div>
+  }
+
+  renderModal(){
+    if(!this.state.modalAction) return null;
+    return <NewModal
+      title={this.state.modalAction.title}
+      route={this.state.modalAction.route}
+      size={this.state.modalAction.size || ""}
+      onSave={UI.onSaveNewModal}
+      onClose={UI.onHideNewModal}
+      viewHeight={this.state.viewportHeight}
+      payload={this.state.modalAction.payload}
+      onFieldUpdate={this.business.onFieldUpdate}
+      onLoadColumns={this.business.loadColumns}
+      onSaveAction={this.business.rowAction}
+    />
   }
 
   getViewComponent(){

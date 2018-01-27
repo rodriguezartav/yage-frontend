@@ -1,5 +1,6 @@
 {
   "groupBy": "estado",
+  "groupByFields": ["estado", "otro"],
   "principalColumn": "paciente_id",
   "columns": {
     "paciente_id": {
