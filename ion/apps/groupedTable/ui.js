@@ -210,6 +210,16 @@ UI.onChangeView = function(view) {
   Business.instance.load(view);
 }
 
+UI.onChangeGroup = function(group) {
+
+  Business.instance.app.setState({
+    groupBy: group
+  });
+
+  Business.instance.reComputeRows();
+
+}
+
 UI.showSave = function() {
   Business.instance.app.setState({
     toast: "Se guardaron los cambios"

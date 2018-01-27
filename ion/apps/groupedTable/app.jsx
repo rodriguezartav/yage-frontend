@@ -67,6 +67,10 @@ class App extends React.Component {
     UI.onChangeView(option);
   }
 
+  onGroupClick(key,option){
+    UI.onChangeGroup(option);
+  }
+
   onRefresh(){
     UI.refresh();
   }
@@ -96,7 +100,7 @@ class App extends React.Component {
       errors={null}
       datakey="type"
       item={_this.props.groupBy}
-      onChange={_this.onViewClick.bind(_this)}
+      onChange={_this.onGroupClick.bind(_this)}
       options={groupBy} />
 
 

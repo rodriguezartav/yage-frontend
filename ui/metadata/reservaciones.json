@@ -1,6 +1,6 @@
 {
-  "groupBy": "estado",
-  "groupByFields": ["estado", "otro"],
+  "groupBy": "dias",
+  "groupByFields": ["estado", "dias"],
   "principalColumn": "paciente_id",
   "columns": {
     "paciente_id": {
@@ -26,9 +26,10 @@
       "order": ["nuevo", "pagado", "becado"],
       "sumOnSort": "monto"
     },
-    "emails": {
-      "title": "Emails",
-      "type": "list"
+    "dias": {
+      "title": "dias",
+      "type": "list",
+      "title": "Días de Ceremonia"
     },
     "total_personas": {
       "title": "Pax Total",
@@ -69,7 +70,7 @@
   },
 
   "listColumns": [
-    "paciente_id", "estado", "observacion", "sin_hotel", "jueves", "sabado", "domingo", "total_personas", "monto", "saldo"
+    "paciente_id", "dias", "estado", "observacion", "sin_hotel", "jueves", "sabado", "domingo", "total_personas", "monto", "saldo"
   ],
   "listColumnsActions": [{
     "type": "newModal",
