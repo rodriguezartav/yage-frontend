@@ -23,7 +23,7 @@ class Picklist extends React.Component {
     var _this = this;
     return this.props.options.map(function(option){
       return <li key={option} data-option={option} onClick={_this.onChange.bind(_this)} role="presentation" className="slds-listbox__item">
-                <span className="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center slds-has-focus" role="option">
+                <span className="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center " role="option">
                   <span className="slds-media__figure">
                     <svg className="slds-icon slds-icon_x-small slds-listbox__icon-selected" aria-hidden="true">
                       <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check" />

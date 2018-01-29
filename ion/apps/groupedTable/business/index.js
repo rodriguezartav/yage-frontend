@@ -115,7 +115,10 @@ Business.prototype.filter = function(column, text) {
 }
 
 Business.prototype.reComputeRows = function() {
-  this.computeRows(this.app.state.filter);
+  var _this = this;
+  setTimeout(function() {
+    _this.computeRows(_this.app.state.filter);
+  }, 50);
 }
 
 Business.prototype.computeRows = function(filter, sortBy, sortDirection) {

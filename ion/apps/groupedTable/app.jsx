@@ -99,7 +99,7 @@ class App extends React.Component {
       <Picklist
       errors={null}
       datakey="type"
-      item={_this.props.groupBy}
+      item={_this.state.groupBy}
       onChange={_this.onGroupClick.bind(_this)}
       options={groupBy} />
 
