@@ -1,7 +1,6 @@
 import moment from "moment";
 import Business from "./business";
 import Contents from "./business/contents";
-
 import Toast from "../../components/toast";
 
 
@@ -211,13 +210,11 @@ UI.onChangeView = function(view) {
 }
 
 UI.onChangeGroup = function(group) {
-
   Business.instance.app.setState({
     groupBy: group
   });
 
   Business.instance.reComputeRows();
-
 }
 
 UI.showSave = function() {

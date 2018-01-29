@@ -1,5 +1,6 @@
 {
   "groupBy": "es_nuevo",
+  "groupByFields": ["es_nuevo"],
   "principalColumn": "templateName",
   "columns": {
     "templateName": {
