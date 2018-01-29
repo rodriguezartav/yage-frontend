@@ -200,13 +200,14 @@ UI.onSortBy = function(sortBy) {
   Business.instance.sort(sortBy);
 }
 
-UI.onChangeView = function(view) {
-  Contents.clear();
+UI.onGroupHeaderClick = function(header, open) {
+  var state = Business.instance.app.state.groupByStatus;
+  if (state[header]) state[header] = false;
+  else state[header] = true;
   Business.instance.app.setState({
-    dataView: view,
-    contents: []
-  });
-  Business.instance.load(view);
+    groupByStatus: state
+  })
+  Business.instance.reComputeRows();
 }
 
 UI.onChangeGroup = function(group) {

@@ -73,7 +73,7 @@
 }
 
 .group-cell-static-header{
-  padding-left: 10px;
+  padding-left: 1px;
   margin-left: 10px;
   color: #333;
   padding-top: 4px;
@@ -83,6 +83,33 @@
   background-color: rgba(100,100,100,0.1);
   text-transform: capitalize;
 }
+
+.group-cell-static-header .slds-badge_wrapper{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.group-cell-static-header .slds-badge{
+  line-height: 2;
+}
+
+.group-cell-static-header .group-cell-header-count-title{
+  color: rgba(100,100,100,0.4);
+  margin-right: 3px;
+}
+
+.group-cell-static-header .group-cell-header-count{
+  color: rgba(100,100,100,0.7);
+}
+
+.group-cell-header_closed{
+  border-radius: 5px 0px 0px 5px;
+}
+
+.group-cell-header_closed .slds-button_icon{
+  transform: rotate(-90deg);
+}
+
 
 .content-cell{
   border: 1px solid #ddd;

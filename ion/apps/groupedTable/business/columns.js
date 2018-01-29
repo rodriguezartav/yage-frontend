@@ -95,7 +95,7 @@ Columns.getColumnWidths = function(rows, columns) {
       var colValue = row[col] || "";
 
       var labelCount = column.labelWidth + 70;
-      var contentCount = colValue.contentWidth;
+      var contentCount = colValue.contentWidth || 0;
 
       if (labelCount < Ops.minColumnWidth) labelCount = Ops.minColumnWidth;
       if (contentCount > Ops.maxColumnWidth) contentCount = Ops.maxColumnWidth;
@@ -105,7 +105,7 @@ Columns.getColumnWidths = function(rows, columns) {
 
       if (col == props.principalColumn) {
         contentCount += 50;
-        if (contentCount < 200) contentCount = 200;
+        if (contentCount < 230) contentCount = 230;
       }
 
       if (contentCount > columnWidths[col]) columnWidths[col] = contentCount;

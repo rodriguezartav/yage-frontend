@@ -41,6 +41,7 @@ function Business(app) {
     contents: [],
     computedRows: [],
     groupBy: app.props.groupBy,
+    groupByStatus: {},
     content: null,
     dataView: app.props.views[0].name,
     listColumns: Columns.getColumnsArrayFromList("listColumns"),
@@ -118,6 +119,8 @@ Business.prototype.reComputeRows = function() {
 }
 
 Business.prototype.computeRows = function(filter, sortBy, sortDirection) {
+  var _this = this;
+
   var groupBy = this.app.state.groupBy;
   if (!sortBy) sortBy = this.app.state.sortBy;
   if (!sortDirection) sortDirection = this.app.state.sortDirection;
@@ -129,14 +132,21 @@ Business.prototype.computeRows = function(filter, sortBy, sortDirection) {
 
   var rows = [];
   groupInfo.list.forEach(function(group) {
-    rows = rows.concat(group.rows);
+    if (_this.app.state.groupByStatus[group.name] || groupInfo.list.length == 1) {
+      rows = rows.concat(group.rows);
+    } else {
+      group.rows[1].isClosed = true;
+      rows.push(group.rows[0]);
+      rows.push(group.rows[1]);
+    }
+
   })
 
   var newState = {
     sortBy: sortBy,
     sortDirection: sortDirection,
     computedRows: rows,
-    filter: filter
+    filter: filter,
   };
   if (rows.length == 0 && filter) rows = [{
     isPlaceHolder: true

@@ -4,6 +4,7 @@ import UI from "../../ui";
 import IconButton from "../../../../components/iconButton";
 import classnames from "classnames";
 import Ops from "../../business/ops";
+import numeral from "numeral"
 
 class Cell extends React.PureComponent {
 
@@ -24,6 +25,11 @@ class Cell extends React.PureComponent {
 
   resetEdit(){
     this.setState({ editing: false })
+  }
+
+  onGroupHeaderClick(){
+    if(this.props.isStatic) UI.onGroupHeaderClick(this.props.row.header, true);
+
   }
 
   onIconClick(e){
@@ -88,29 +94,7 @@ class Cell extends React.PureComponent {
     return style;
   }
 
-  renderEdit(){
-    if( !this.state.editing ) return null;
-    var style = this.getPopOverStyle();
-    style.bottom=null;
 
-    return <section style={style} className={classnames("slds-popover", { "slds-nubbin_left": ( style.top > 0 )  } ) } >
-      <button  onClick={this.onCloseOption.bind(this)} className="close-btn slds-button slds-button_icon slds-button_icon-small slds-float_right slds-popover__close slds-button_icon" title="Close dialog">
-        <svg className="slds-button__icon" aria-hidden="true">
-          <use  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
-        </svg>
-      </button>
-      <div className="slds-popover__body" >
-
-        <div className="slds-dropdown_left">
-          <ul className="slds-dropdown__list" role="menu">
-           {this.renderActions()}
-          </ul>
-        </div>
-
-
-      </div>
-    </section>
-  }
 
   renderIcon(){
     var _this = this;
@@ -123,11 +107,28 @@ class Cell extends React.PureComponent {
 
   renderView(){
     var _this = this;
-    var value = this.props.row[this.props.column.name];
-    if(this.props.isStatic) value = this.props.row.header;
+    if(!this.props.isStatic){
+      if( this.props.row._headerOptions.hasTitle && ( this.props.column.type =="integer" || this.props.column.type == "number" ) && this.props.column.totalize ){
+        return <div className="slds-text-align_right slds-text-title">{numeral(this.props.column.total).format("0,0.00")}</div>;
+      }
+      return null;
+    }
 
-    return <div className="" ref="src_icon_wrapper" style={{ position: "relative" }}>
-      <div   className="slds-truncate text-button">{value}</div>
+    if(!this.props.row._headerOptions || !this.props.row._headerOptions.hasTitle) return null;
+
+
+
+    return <div  className="" ref="src_icon_wrapper" style={{ position: "relative" }}>
+      <div className="slds-truncate text-button ">
+        <span className="slds-badge_wrapper">
+          <IconButton onClick={this.onGroupHeaderClick.bind(this)} noBorder="true" icon="switch" />
+          <span className={"slds-badge color" + this.props.row._headerOptions.index}>{this.props.row._headerOptions.name}</span>
+        </span>
+        <span className="slds-m-right_small slds-float_right group-cell-header-count">
+          <span className="slds-text-title group-cell-header-count-title">{this.props.row._headerOptions.count > 0 ? "Count " : ""}</span>
+          <span className="slds-text-title">{this.props.row._headerOptions.count}</span>
+          </span>
+      </div>
 
     </div>
   }
@@ -142,17 +143,15 @@ class Cell extends React.PureComponent {
 
   render(){
 
-    this.props.groupFields
-
     var classes = "slds-col group-cell"
     if(this.props.row.header && this.props.isStatic) classes +=  " group-cell-static-header ";
+    if(this.props.row.isClosed && this.props.isStatic ) classes += " group-cell-header_closed"
     if(this.props.row.header && !this.props.isStatic) classes +=  " group-cell-header ";
-    if( this.state.editing ) classes+="";
-    classes += " " + this.getColor();
 
     return <div
       style={this.props.style}
       className={classes}
+      onClick={this.onGroupHeaderClick.bind(this)}
     >
     {this.renderView()}
     </div>

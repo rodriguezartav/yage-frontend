@@ -160,7 +160,7 @@ export default class ExampleGrid extends React.Component {
 
      var column = this.state.columns[0];
 
-     if(row.isHeader) return <GroupCell
+     if(row._headerOptions) return <GroupCell
       column={column}
       row={row}
       key={Math.random()*100000}
@@ -220,7 +220,7 @@ export default class ExampleGrid extends React.Component {
         height: Ops.rowHeight
       }
 
-      if(row.isHeader) return <GroupCell column={column} row={row} key={Math.random()*100000} style={style} xOffset={ staticWidth } />
+      if(row._headerOptions) return <GroupCell column={column} row={row} key={Math.random()*100000} style={style} xOffset={ staticWidth } />
 
       return <ContentCell
         height={_this.props.height}
