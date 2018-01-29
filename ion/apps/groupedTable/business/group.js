@@ -84,7 +84,6 @@ function getRow(group, addTitle) {
     };
   }
 
-  console.log(row._headerOptions)
 
   return row;
 }
