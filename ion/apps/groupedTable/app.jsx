@@ -75,6 +75,14 @@ class App extends React.Component {
     UI.refresh();
   }
 
+  onActionClick(e){
+    var action;
+    var dataset = e.currentTarget.dataset;
+    if(dataset && dataset.action) action = dataset.action;
+    else action = e.currentTarget.getAttribute("action");
+    UI.onActionClick( JSON.parse(action) );
+  }
+
   renderViews(){
     var _this = this;
 
@@ -113,6 +121,7 @@ class App extends React.Component {
   }
 
   renderOptions(){
+    var _this = this;
     var options = [];
 
     options.push( <button key={"new_btn"} onClick={UI.onNew} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled" aria-pressed="true" title="Charts">
@@ -122,12 +131,28 @@ class App extends React.Component {
       </button>
     )
 
-    options.push( <button key={"refresg_btn"} onClick={UI.onRefresh} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled" aria-pressed="true" title="Charts">
+    options.push( <button key={"refresg_btn"} onClick={UI.onRefresh} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled slds-m-right_medium" aria-pressed="true" title="Charts">
       <svg className="slds-button__icon" aria-hidden="true">
         <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#sync" />
       </svg>
       </button>
     )
+
+    this.props.listColumnsActions.forEach(function(action){
+      options.push( <button title={action.name}
+        key={action.name}
+        data-action={JSON.stringify(action)}
+        onClick={_this.onActionClick.bind(_this)}
+        data-type="list"
+        className="slds-button slds-button_icon slds-button_icon-border-filled"
+        aria-pressed="true" title="Charts">
+
+          <svg className="slds-button__icon" aria-hidden="true">
+            <use xlinkHref={"/assets/icons/utility-sprite/svg/symbols.svg#"+action.icon} />
+          </svg>
+
+      </button>)
+    })
 
     return <div className="" role="group">
       <span className="slds-m-right_x-small slds-m-left_small slds-text-title_caps">Actions</span> {options}
@@ -159,6 +184,7 @@ class App extends React.Component {
         rowCount={rows.length}
         columns={columns}
         rows={rows}
+        selectedRowIds={this.state.selectedRowIds}
         totalWidth={this.state.columnWidthData.totalWidth}
         columnWidths={this.state.columnWidthData.columnWidths}
         height={this.state.viewportHeight}

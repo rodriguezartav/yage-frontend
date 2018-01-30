@@ -41,6 +41,7 @@ function Business(app) {
     contents: [],
     computedRows: [],
     groupBy: app.props.groupBy,
+    selectedRowIds: [],
     groupByStatus: {},
     content: null,
     dataView: app.props.views[0].name,
@@ -134,8 +135,8 @@ Business.prototype.computeRows = function(filter, sortBy, sortDirection) {
   var groupInfo = Group.init(filteredRows, groupBy, this.app.props, sortBy, sortDirection);
 
   var rows = [];
-  groupInfo.list.forEach(function(group) {
-    if (_this.app.state.groupByStatus[group.name] || groupInfo.list.length == 1) {
+  groupInfo.list.forEach(function(group, index) {
+    if (_this.app.state.groupByStatus[group.name] || groupInfo.list.length == 1 || groupInfo.list.length == index + 1) {
       rows = rows.concat(group.rows);
     } else {
       group.rows[1].isClosed = true;

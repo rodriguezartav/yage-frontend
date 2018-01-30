@@ -86,10 +86,10 @@ export default class ExampleGrid extends React.Component {
     interval = setInterval(function(){
          clearInterval(interval);
         _this.setState({scrollingY: false, interval: null})
-    },50);
+    },30);
 
     UI.resetEditingCells();
-    UI.registerStaticCell();
+
     this.setState({interval: interval, scrolled:  this.refs.scroll.scrollTop, scrollingY: true });
    }
 
@@ -171,6 +171,7 @@ export default class ExampleGrid extends React.Component {
 
      return <StaticCell
       scrollingY={ this.state.scrollingY }
+      isSelected={ this.props.selectedRowIds.indexOf(row.id) > -1 }
       listColumnsActions={ this.props.listColumnsActions }
       key={ row.id+"-"+column.name }
       row={ row }

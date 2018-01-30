@@ -105,7 +105,11 @@ UI.onHideNewModal = function() {
   });
 }
 
-UI.onActionClick = function(id, action) {
+UI.onActionClick = function(action) {
+  if (Business.instance.app.state.selectedRowIds.length == 0) return UI.toastWarning(new Error("(ion-e) Debe seleccionar al menos una fila"));
+  if (Business.instance.app.state.selectedRowIds.length > 1) return UI.toastWarning(new Error("(ion-e) El sistema aun no adminte operaciones de multiples filas"));
+
+  var id = Business.instance.app.state.selectedRowIds[0];
   var content = Contents.one(id);
   action.payload = content;
   action.payload.payloadOptions = action.payloadOptions || {};
@@ -148,6 +152,19 @@ UI.onRowClick = function(id) {
     modalAction: action,
     content: content
   });
+}
+
+UI.onRowSelected = function(id) {
+  var ids = Business.instance.app.state.selectedRowIds
+  var index = ids.indexOf(id);
+  if (index == -1) ids.push(id);
+  else {
+    ids.splice(index, 1);
+  }
+
+  Business.instance.app.setState({
+    selectedRowIds: ids
+  })
 }
 
 UI.onRowClick2 = function(id) {

@@ -124,10 +124,12 @@ class Cell extends React.PureComponent {
           <IconButton onClick={this.onGroupHeaderClick.bind(this)} noBorder="true" icon="switch" />
           <span className={"slds-badge color" + this.props.row._headerOptions.index}>{this.props.row._headerOptions.name}</span>
         </span>
+        {this.props.row.isClosed ?
         <span className="slds-m-right_small slds-float_right group-cell-header-count">
           <span className="slds-text-title group-cell-header-count-title">{this.props.row._headerOptions.count > 0 ? "Count " : ""}</span>
           <span className="slds-text-title">{this.props.row._headerOptions.count}</span>
           </span>
+          : null }
       </div>
 
     </div>
