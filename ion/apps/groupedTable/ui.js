@@ -155,13 +155,25 @@ UI.onRowClick = function(id) {
 }
 
 UI.onRowSelected = function(id) {
-  var ids = Business.instance.app.state.selectedRowIds
+  var ids = Business.instance.app.state.selectedRowIds;
   var index = ids.indexOf(id);
   if (index == -1) ids.push(id);
   else {
     ids.splice(index, 1);
   }
 
+  Business.instance.app.setState({
+    selectedRowIds: ids
+  })
+}
+
+UI.onGroupSelected = function(groupRow) {
+  var ids = Business.instance.app.state.selectedRowIds;
+  groupRow._headerOptions.rows.forEach(function(row) {
+    var index = ids.indexOf(row.id);
+    if (index == -1) ids.push(row.id);
+    else ids.splice(index, 1);
+  })
   Business.instance.app.setState({
     selectedRowIds: ids
   })

@@ -89,6 +89,10 @@
   vertical-align: top;
 }
 
+.group-cell-static-header input{
+  margin-left: 7px;
+}
+
 .group-cell-static-header .slds-badge{
   line-height: 2;
 }
@@ -123,9 +127,19 @@
   border-left: 1px solid rgba(100,100,100,0.6);
   margin-left: 10px;
   padding-left: 10px;
-
 }
 
+.static-content .content-cell input{
+  visibility: hidden;
+}
+
+.static-content .content-cell.content-static-cell_selected input{
+  visibility: initial;
+}
+
+.static-content .content-cell:hover input{
+  visibility: initial;
+}
 
 .slds-badge_small{
   font-size: 8px;

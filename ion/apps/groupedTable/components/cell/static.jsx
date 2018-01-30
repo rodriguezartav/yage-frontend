@@ -23,7 +23,7 @@ class Cell extends React.PureComponent {
     var _this = this;
     var value = this.props.row[this.props.column.name];
     var classes = "slds-col content-cell slds-truncate content-static-cell"
-
+    if(this.props.isSelected) classes += " content-static-cell_selected"
     return <div
       style={this.props.style}
       className={classes}
@@ -32,7 +32,10 @@ class Cell extends React.PureComponent {
 
         <div className="slds-truncate text-button">
 
-          <input checked={this.props.isSelected ? "checked" : null} onChange={this.onChecked.bind(this)} className="slds-m-right_small" type="checkbox"  />
+          <input
+            checked={this.props.isSelected ? "checked" : null}
+            onChange={this.onChecked.bind(this)}
+            className="slds-m-right_small" type="checkbox"  />
           <a onClick={this.onClick.bind(this)}>{ value ? value.formatValue : "" }</a>
           </div>
 

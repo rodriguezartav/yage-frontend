@@ -76,6 +76,7 @@ function getRow(group, addTitle) {
       name: group.name,
       index: group.index,
       count: group.count,
+      rows: group.rows,
       hasTitle: true
     }
   } else {
