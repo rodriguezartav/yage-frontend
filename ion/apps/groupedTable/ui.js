@@ -91,6 +91,7 @@ UI.onScrollGroupClick = function(field) {
 UI.onSaveNewModal = function(item) {
   Business.instance.app.setState({
     modalAction: null,
+    editAction: null,
     editColumns: null,
     content: null
   });
@@ -100,6 +101,7 @@ UI.onSaveNewModal = function(item) {
 UI.onHideNewModal = function() {
   Business.instance.app.setState({
     modalAction: null,
+    editAction: null,
     editColumns: null,
     content: null
   });
@@ -152,6 +154,12 @@ UI.onRowClick = function(id) {
     modalAction: action,
     content: content
   });
+}
+
+UI.clearAllSelectedRows = function() {
+  Business.instance.app.setState({
+    selectedRowIds: []
+  })
 }
 
 UI.onRowSelected = function(id) {
