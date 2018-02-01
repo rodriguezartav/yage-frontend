@@ -27,15 +27,12 @@ class Cell extends React.PureComponent {
     return <div
       style={this.props.style}
       className={classes}
+      onClick={this.onChecked.bind(this)}
     >
       <div className="" ref="src_icon_wrapper" style={{ position: "relative" }}>
 
         <div className="slds-truncate text-button">
 
-          <input
-            checked={this.props.isSelected ? "checked" : null}
-            onChange={this.onChecked.bind(this)}
-            className="slds-m-right_small" type="checkbox"  />
           <a onClick={this.onClick.bind(this)}>{ value ? value.formatValue : "" }</a>
           </div>
 

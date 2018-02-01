@@ -25,19 +25,6 @@ class IconButton extends React.Component {
 
 }
 
-IconButton.demo = function(Highlight){
-  return <div>
-    <IconButton label="Donde se instalarian los productos?"
-      icon="address"
-      onClick={null}/>
-    <Highlight className='dark'>
-      {`<IconButton
-      icon="address"
-      onClick={undefined}/>`}
-    </Highlight>
-  </div>
-}
-
 export default IconButton;
 
 

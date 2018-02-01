@@ -16,3 +16,11 @@
 .view-button_selected:focus{
  color: #fff;
 }
+
+.tool-box .help{
+  position: absolute; top: 0px; left: 15px;
+}
+
+.tool-box .help .help-popover{
+  position: absolute; top: 0px; left: 15px;
+}

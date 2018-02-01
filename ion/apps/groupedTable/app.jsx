@@ -5,6 +5,7 @@ import GlobalHeader from "../../components/globalHeader";
 import PageHeader from "../../components/pageHeader";
 import ButtonBar from "../../components/buttonBar";
 import Picklist from "../../components/picklist";
+import IconButtonWithDropdown from "../../components/iconButtonDropdown";
 import NewModal from "../../components/newModal";
 import NewModalPage from "../../components/newModal/page";
 import Business from "./business"
@@ -139,7 +140,10 @@ class App extends React.Component {
     )
 
     this.props.listColumnsActions.forEach(function(action){
-      options.push( <button title={action.name}
+      var disabled=""
+      if( _this.state.selectedRowIds.length == 0 ) disabled="disabled";
+
+      options.push( <button disabled={disabled} title={action.name}
         key={action.name}
         data-action={JSON.stringify(action)}
         onClick={_this.onActionClick.bind(_this)}
@@ -153,6 +157,8 @@ class App extends React.Component {
 
       </button>)
     })
+
+    options.push(<IconButtonWithDropdown items={this.props.listColumnsActions} field="name" />)
 
     return <div className="" role="group">
       <span className="slds-m-right_x-small slds-m-left_small slds-text-title_caps">Actions</span> {options}
