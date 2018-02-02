@@ -5,6 +5,7 @@ import GlobalHeader from "../../components/globalHeader";
 import PageHeader from "../../components/pageHeader";
 import ButtonBar from "../../components/buttonBar";
 import Picklist from "../../components/picklist";
+
 import IconButtonWithDropdown from "../../components/iconButtonDropdown";
 import NewModal from "../../components/newModal";
 import NewModalPage from "../../components/newModal/page";
@@ -140,6 +141,7 @@ class App extends React.Component {
     )
 
     this.props.listColumnsActions.forEach(function(action){
+
       var disabled=""
       if( _this.state.selectedRowIds.length == 0 ) disabled="disabled";
 
@@ -157,6 +159,7 @@ class App extends React.Component {
 
       </button>)
     })
+
 
     options.push(<IconButtonWithDropdown items={this.props.listColumnsActions} field="name" />)
 

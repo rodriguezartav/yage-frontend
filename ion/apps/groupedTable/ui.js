@@ -156,12 +156,6 @@ UI.onRowClick = function(id) {
   });
 }
 
-UI.clearAllSelectedRows = function() {
-  Business.instance.app.setState({
-    selectedRowIds: []
-  })
-}
-
 UI.onRowSelected = function(id) {
   var ids = Business.instance.app.state.selectedRowIds;
   var index = ids.indexOf(id);

@@ -133,6 +133,7 @@
   visibility: hidden;
 }
 
+
 .static-content .content-cell.content-static-cell_selected{
   background-color: rgba(38, 51, 109, 0.2);
   color: #fff;
@@ -140,10 +141,6 @@
 
 .static-content .content-cell.content-static-cell_selected a{
   color: #fff;
-}
-
-.static-content .content-cell:hover input{
-  visibility: initial;
 }
 
 .slds-badge_small{
