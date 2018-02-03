@@ -10,7 +10,7 @@ phases:
       - eval `ssh-agent -s`
   build:
     commands:
-      - ssh-agent sh -c 'ssh-add -K ~/id_rsa'
+      - ssh-agent sh -c 'ssh-add ~/id_rsa'
       - git clone git@github.com:Rodco/ion.git
       - webpack -p --progress
       - aws s3 sync ./dist s3://$S3_PREFIX --acl public-read
