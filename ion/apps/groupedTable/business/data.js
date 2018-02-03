@@ -31,11 +31,6 @@ export default function(Business) {
     UI.toastError(new Error("(ion-e)Parece que no tiene acceso para realizar esta operación, consulte con su asesor de tecnología"));
   }
 
-  Business.prototype.download = function(downloadRoute) {
-    var _this = this;
-    Ajax.go(window.location = "/" + this.app.props.route + "/" + downloadRoute);
-  }
-
   Business.prototype.load = function(dataView) {
     var _this = this;
     Logo.httpStart();

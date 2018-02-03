@@ -71,12 +71,6 @@ Ajax.checkStatus = function(path) {
     })
 }
 
-Ajax.go = function(path, params) {
-  var status;
-  var headers;
-  window.location = Ajax.getURL(path, params);
-}
-
 Ajax.get = function(path, params) {
   var status;
   var headers;

@@ -12,7 +12,9 @@ phases:
     commands:
       - chmod 600 ~/.ssh/id_rsa
       - ssh-agent sh -c 'ssh-add ~/.ssh/id_rsa'
-      - git clone git@github.com:Rodco/ion.git
+      - cd ion
+      - git pull origin master
+      - cd ..
       - webpack -p --progress
       - aws s3 sync ./dist s3://$S3_PREFIX --acl public-read
 artifacts:
