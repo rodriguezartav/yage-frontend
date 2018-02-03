@@ -10,6 +10,7 @@ phases:
       - eval `ssh-agent -s`
   build:
     commands:
+      - chmod 644 ~/.ssh/id_rsa
       - ssh-agent sh -c 'ssh-add ~/.ssh/id_rsa'
       - git clone git@github.com:Rodco/ion.git
       - webpack -p --progress
