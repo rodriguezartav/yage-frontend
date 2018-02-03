@@ -8,10 +8,10 @@ phases:
       - apt-get update
       - apt-get -y install openssh-client
       - eval "$(ssh-agent -s)"
-      - ssh-add -K ~/.ssh/id_rsa
-      - git clone git@github.com:Rodco/ion.git
   build:
     commands:
+      - ssh-add -K ~/.ssh/id_rsa
+      - git clone git@github.com:Rodco/ion.git
       - webpack -p --progress
       - aws s3 sync ./dist s3://$S3_PREFIX --acl public-read
 artifacts:
