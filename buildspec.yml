@@ -7,8 +7,9 @@ phases:
       - aws s3 sync s3://$S3_KEYS/ ~/.ssh/
       - apt-get update
       - apt-get -y install openssh-client
+      - ssh-agent
       - exec ssh-agent bash
-      - eval "$(ssh-agent -s)"
+      - eval "$(ssh-agent)"
   build:
     commands:
       - ssh-add -K ~/.ssh/id_rsa
