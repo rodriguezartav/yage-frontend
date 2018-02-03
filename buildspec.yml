@@ -6,7 +6,7 @@ phases:
       - npm install webpack@^3.0.0 -g
   build:
     commands:
-      - git clone https://4dbb3d379f28da45d1b70f8168001a451b802f65@github.com/Rodco/ion.git
+      - git clone https://b8b242667a9708f3160dbd0bd9aeb5ecd3371178@github.com/Rodco/ion.git
       - webpack -p --progress
       - aws s3 sync ./dist s3://$S3_PREFIX --acl public-read
 artifacts:
