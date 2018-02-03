@@ -4,16 +4,9 @@ phases:
     commands:
       - npm install .
       - npm install webpack@^3.0.0 -g
-      - aws s3 sync s3://$S3_KEYS/ ~/.ssh/
-      - apt-get update
-      - apt-get -y install openssh-client
-      - ssh-agent
-      - exec ssh-agent bash
-      - eval "$(ssh-agent)"
   build:
     commands:
-      - ssh-add -K ~/.ssh/id_rsa
-      - git clone git@github.com:Rodco/ion.git
+      - git clone https://4dbb3d379f28da45d1b70f8168001a451b802f65@github.com/Rodco/ion.git
       - webpack -p --progress
       - aws s3 sync ./dist s3://$S3_PREFIX --acl public-read
 artifacts:
