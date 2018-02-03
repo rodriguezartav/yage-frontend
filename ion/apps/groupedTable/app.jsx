@@ -126,16 +126,23 @@ class App extends React.Component {
     var _this = this;
     var options = [];
 
-    options.push( <button key={"new_btn"} onClick={UI.onNew} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled" aria-pressed="true" title="Charts">
+    options.push( <button key={"new_btn"} onClick={UI.onNew} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled" aria-pressed="true" title="New">
       <svg className="slds-button__icon" aria-hidden="true">
         <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#new" />
       </svg>
       </button>
     )
 
-    options.push( <button key={"refresg_btn"} onClick={UI.onRefresh} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled slds-m-right_medium" aria-pressed="true" title="Charts">
+    options.push( <button key={"refresh_btn"} onClick={UI.onRefresh} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled slds-m-right_medium" aria-pressed="true" title="Refresh">
       <svg className="slds-button__icon" aria-hidden="true">
         <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#sync" />
+      </svg>
+      </button>
+    )
+
+    options.push( <button key={"download_btn"} onClick={UI.onDownload} data-type="list" className="slds-button slds-button_icon slds-button_icon-border-filled slds-m-right_medium" aria-pressed="true" title="Download">
+      <svg className="slds-button__icon" aria-hidden="true">
+        <use xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
       </svg>
       </button>
     )

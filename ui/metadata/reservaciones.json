@@ -112,6 +112,7 @@
     "name": "allFromPeriod?periodo=2018-1",
     "icon": "list"
   }],
+  "downloadRoute": "allFromPeriod_xls?periodo=2018-1",
   "route": "api/reservacion",
   "newComponent": "new",
   "editComponnt": "edit"

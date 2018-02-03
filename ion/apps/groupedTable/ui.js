@@ -145,6 +145,11 @@ UI.onRefresh = function() {
   Business.instance.load(Business.instance.app.state.dataView);
 }
 
+UI.onDownload = function() {
+  Business.instance.download(Business.instance.app.props.downloadRoute);
+}
+
+
 UI.onRowClick = function(id) {
   var content = Contents.one(id);
   var action = Business.instance.app.props.editAction;
