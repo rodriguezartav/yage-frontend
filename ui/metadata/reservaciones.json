@@ -38,24 +38,29 @@
     },
     "monto": {
       "title": "Monto",
-      "type": "number"
+      "type": "number",
+      "totalize": true
     },
     "saldo": {
       "title": "Saldo",
       "type": "number",
-      "editable": true
+      "editable": true,
+      "totalize": true
     },
     "jueves": {
       "title": "Pax Jueves",
-      "type": "number"
+      "type": "number",
+      "totalize": true
     },
     "sabado": {
       "title": "Pax Sabado",
-      "type": "number"
+      "type": "number",
+      "totalize": true
     },
     "domingo": {
       "title": "Pax Domingo",
-      "type": "number"
+      "type": "number",
+      "totalize": true
     },
     "observacion": {
       "title": "Observación",
