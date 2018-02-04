@@ -1,5 +1,5 @@
 {
-  "groupBy": "dias",
+  "groupBy": "estado",
   "groupByFields": ["estado", "dias"],
   "principalColumn": "paciente_id",
   "columns": {
@@ -70,7 +70,7 @@
   },
 
   "listColumns": [
-    "paciente_id", "dias", "estado", "observacion", "sin_hotel", "jueves", "sabado", "domingo", "total_personas", "monto", "saldo"
+    "paciente_id", "dias", "estado", "monto", "saldo", "observacion", "sin_hotel", "jueves", "sabado", "domingo", "total_personas"
   ],
   "listColumnsActions": [{
     "type": "newModal",
