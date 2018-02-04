@@ -8,3 +8,4 @@ jspm_packages
 temp
 .env
 /dist
+ion
