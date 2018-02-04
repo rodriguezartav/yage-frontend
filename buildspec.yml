@@ -11,6 +11,7 @@ phases:
   build:
     commands:
       - chmod 600 ~/.ssh/id_rsa
+      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       - ssh-agent sh -c 'ssh-add ~/.ssh/id_rsa'
       - git clone git@github.com:Rodco/ion.git
       - webpack -p --progress
